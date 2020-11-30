@@ -7,3 +7,4 @@ C:\Users\silverstorm\source\repos\Service center management software\Service-cen
 C:\Users\silverstorm\source\repos\Service center management software\Service-center-management-software\Projector service app\obj\Debug\Projector service app.csproj.CoreCompileInputs.cache
 C:\Users\silverstorm\source\repos\Service center management software\Service-center-management-software\Projector service app\obj\Debug\Projector service app.exe
 C:\Users\silverstorm\source\repos\Service center management software\Service-center-management-software\Projector service app\obj\Debug\Projector service app.pdb
+C:\Users\silverstorm\source\repos\Service center management software\Service-center-management-software\Projector service app\obj\Debug\Projector_service_app.Form1.resources
