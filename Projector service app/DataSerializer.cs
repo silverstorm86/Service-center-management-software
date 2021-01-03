@@ -15,15 +15,15 @@ namespace Projector_service_app
         //Serialize all the data for later use
         //Getting data for the app by Deserialize
 
-        public void SerializeCustomer(List<Customer> input)
+        internal void SerializeCustomer(List<Customer> input)
         {
-            using (FileStream fileStream = new FileStream("Customer.psa", FileMode.Append, FileAccess.Write))
+            using (FileStream fileStream = new FileStream("Customer.psa", FileMode.Create, FileAccess.Write))
             {                
                 BinaryFormatter formatter = new BinaryFormatter();
                 formatter.Serialize(fileStream, input);
             }
         }
-        public List<Customer> DeserializeCustomer()
+        internal List<Customer> DeserializeCustomer()
         {
 
             using (FileStream fileStream = new FileStream("Customer.psa", FileMode.Open, FileAccess.Read))
@@ -36,15 +36,15 @@ namespace Projector_service_app
                 return output;
             }
         }
-        private void SerializeDevice(List<Device> input)
+        internal void SerializeDevice(List<Device> input)
         {
-            using (FileStream fileStream = new FileStream("Device.psa", FileMode.Append, FileAccess.Write))
+            using (FileStream fileStream = new FileStream("Device.psa", FileMode.Create, FileAccess.Write))
             {
                 BinaryFormatter formatter = new BinaryFormatter();
                 formatter.Serialize(fileStream, input);
             }
         }
-        private List<Device> DeserializeDevice()
+        internal List<Device> DeserializeDevice()
         {
 
             using (FileStream fileStream = new FileStream("Device.psa", FileMode.Open, FileAccess.Read))
@@ -57,15 +57,15 @@ namespace Projector_service_app
                 return output;
             }
         }
-        private void SerializeMaintenance(List<Maintenance> input)
+        internal void SerializeMaintenance(List<Maintenance> input)
         {
-            using (FileStream fileStream = new FileStream("Maintenance.psa", FileMode.Append, FileAccess.Write))
+            using (FileStream fileStream = new FileStream("Maintenance.psa", FileMode.Create, FileAccess.Write))
             {
                 BinaryFormatter formatter = new BinaryFormatter();
                 formatter.Serialize(fileStream, input);
             }
         }
-        private List<Maintenance> DeserializeMaintenance()
+        internal List<Maintenance> DeserializeMaintenance()
         {
 
             using (FileStream fileStream = new FileStream("Maintenance.psa", FileMode.Open, FileAccess.Read))

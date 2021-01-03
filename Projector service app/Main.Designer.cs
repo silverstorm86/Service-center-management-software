@@ -1,6 +1,6 @@
 ﻿namespace Projector_service_app
 {
-    partial class Form1
+    partial class Main
     {
         /// <summary>
         /// Required designer variable.
@@ -65,12 +65,14 @@
             // DevicesLabel
             // 
             this.DevicesLabel.AutoSize = true;
+            this.DevicesLabel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.DevicesLabel.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DevicesLabel.Location = new System.Drawing.Point(181, 65);
             this.DevicesLabel.Name = "DevicesLabel";
             this.DevicesLabel.Size = new System.Drawing.Size(68, 22);
             this.DevicesLabel.TabIndex = 2;
             this.DevicesLabel.Text = "Devices";
+            this.DevicesLabel.Click += new System.EventHandler(this.DevicesLabel_Click);
             // 
             // ExitLabel
             // 
@@ -106,6 +108,7 @@
             // 
             // Devices
             // 
+            this.Devices.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Devices.Image = global::Projector_service_app.Properties.Resources.videocameracompact;
             this.Devices.Location = new System.Drawing.Point(191, 12);
             this.Devices.Name = "Devices";
@@ -113,6 +116,7 @@
             this.Devices.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Devices.TabIndex = 5;
             this.Devices.TabStop = false;
+            this.Devices.Click += new System.EventHandler(this.Devices_Click);
             // 
             // Exit
             // 
@@ -126,7 +130,7 @@
             this.Exit.TabStop = false;
             this.Exit.Click += new System.EventHandler(this.Exit_Click);
             // 
-            // Form1
+            // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -144,7 +148,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "Form1";
+            this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Menu";
             ((System.ComponentModel.ISupportInitialize)(this.Status)).EndInit();

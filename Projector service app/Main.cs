@@ -11,16 +11,18 @@ using System.Windows.Forms;
 
 namespace Projector_service_app
 {
-    public partial class Form1 : Form
+    public partial class Main : Form
     {
         /*List<Customer> cm;
         
         DataSerializer c = new DataSerializer();*/
-        public Form1()
+        private DeviceForm df;
+        public Main()
         {
             InitializeComponent();
             BorderRounded();
         }
+
         private void BorderRounded()
         {
             GraphicsPath graphicpath = new GraphicsPath();
@@ -43,6 +45,24 @@ namespace Projector_service_app
         private void ExitLabel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void Devices_Click(object sender, EventArgs e)
+        {
+            df = new DeviceForm
+            {
+                StartPosition = FormStartPosition.CenterScreen
+            };
+            df.ShowDialog();
+        }
+
+        private void DevicesLabel_Click(object sender, EventArgs e)
+        {
+            df = new DeviceForm 
+            { 
+            StartPosition = FormStartPosition.CenterScreen
+            };
+            df.ShowDialog();
         }
 
 
