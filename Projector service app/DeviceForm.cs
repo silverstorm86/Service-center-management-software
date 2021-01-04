@@ -12,8 +12,8 @@ namespace Projector_service_app
 {
     public partial class DeviceForm : Form
     {
-        List<Device> devices = new List<Device>();
-        DataSerializer serializer = new DataSerializer();
+        private List<Device> devices = new List<Device>();
+        private readonly DataSerializer serializer = new DataSerializer();
         public DeviceForm()
         {
             InitializeComponent();

@@ -30,11 +30,11 @@
         {
             this.ListOfDevices = new System.Windows.Forms.DataGridView();
             this.Add = new System.Windows.Forms.GroupBox();
-            this.TypeLabel = new System.Windows.Forms.Label();
-            this.TypeText = new System.Windows.Forms.TextBox();
-            this.AddDevice = new System.Windows.Forms.Button();
             this.ModelText = new System.Windows.Forms.TextBox();
             this.ModelLabel = new System.Windows.Forms.Label();
+            this.AddDevice = new System.Windows.Forms.Button();
+            this.TypeText = new System.Windows.Forms.TextBox();
+            this.TypeLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ListOfDevices)).BeginInit();
             this.Add.SuspendLayout();
             this.SuspendLayout();
@@ -64,32 +64,6 @@
             this.Add.TabStop = false;
             this.Add.Text = "Adding new device";
             // 
-            // TypeLabel
-            // 
-            this.TypeLabel.AutoSize = true;
-            this.TypeLabel.Location = new System.Drawing.Point(30, 38);
-            this.TypeLabel.Name = "TypeLabel";
-            this.TypeLabel.Size = new System.Drawing.Size(31, 13);
-            this.TypeLabel.TabIndex = 0;
-            this.TypeLabel.Text = "Type";
-            // 
-            // TypeText
-            // 
-            this.TypeText.Location = new System.Drawing.Point(33, 55);
-            this.TypeText.Name = "TypeText";
-            this.TypeText.Size = new System.Drawing.Size(136, 20);
-            this.TypeText.TabIndex = 1;
-            // 
-            // AddDevice
-            // 
-            this.AddDevice.Location = new System.Drawing.Point(59, 162);
-            this.AddDevice.Name = "AddDevice";
-            this.AddDevice.Size = new System.Drawing.Size(88, 31);
-            this.AddDevice.TabIndex = 2;
-            this.AddDevice.Text = "Add Device";
-            this.AddDevice.UseVisualStyleBackColor = true;
-            this.AddDevice.Click += new System.EventHandler(this.AddDevice_Click);
-            // 
             // ModelText
             // 
             this.ModelText.Location = new System.Drawing.Point(33, 115);
@@ -102,9 +76,35 @@
             this.ModelLabel.AutoSize = true;
             this.ModelLabel.Location = new System.Drawing.Point(30, 98);
             this.ModelLabel.Name = "ModelLabel";
-            this.ModelLabel.Size = new System.Drawing.Size(36, 13);
+            this.ModelLabel.Size = new System.Drawing.Size(39, 13);
             this.ModelLabel.TabIndex = 3;
-            this.ModelLabel.Text = "Model";
+            this.ModelLabel.Text = "Model:";
+            // 
+            // AddDevice
+            // 
+            this.AddDevice.Location = new System.Drawing.Point(59, 162);
+            this.AddDevice.Name = "AddDevice";
+            this.AddDevice.Size = new System.Drawing.Size(88, 31);
+            this.AddDevice.TabIndex = 2;
+            this.AddDevice.Text = "Add Device";
+            this.AddDevice.UseVisualStyleBackColor = true;
+            this.AddDevice.Click += new System.EventHandler(this.AddDevice_Click);
+            // 
+            // TypeText
+            // 
+            this.TypeText.Location = new System.Drawing.Point(33, 55);
+            this.TypeText.Name = "TypeText";
+            this.TypeText.Size = new System.Drawing.Size(136, 20);
+            this.TypeText.TabIndex = 1;
+            // 
+            // TypeLabel
+            // 
+            this.TypeLabel.AutoSize = true;
+            this.TypeLabel.Location = new System.Drawing.Point(30, 38);
+            this.TypeLabel.Name = "TypeLabel";
+            this.TypeLabel.Size = new System.Drawing.Size(34, 13);
+            this.TypeLabel.TabIndex = 0;
+            this.TypeLabel.Text = "Type:";
             // 
             // DeviceForm
             // 
@@ -113,6 +113,8 @@
             this.ClientSize = new System.Drawing.Size(520, 393);
             this.Controls.Add(this.Add);
             this.Controls.Add(this.ListOfDevices);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "DeviceForm";
             this.Text = "DeviceForm";
             ((System.ComponentModel.ISupportInitialize)(this.ListOfDevices)).EndInit();

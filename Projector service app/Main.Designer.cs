@@ -33,11 +33,11 @@
             this.DevicesLabel = new System.Windows.Forms.Label();
             this.ExitLabel = new System.Windows.Forms.Label();
             this.Status = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.Customers = new System.Windows.Forms.PictureBox();
             this.Devices = new System.Windows.Forms.PictureBox();
             this.Exit = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.Status)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Customers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Devices)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Exit)).BeginInit();
             this.SuspendLayout();
@@ -61,6 +61,7 @@
             this.CustomerLabel.Size = new System.Drawing.Size(89, 22);
             this.CustomerLabel.TabIndex = 1;
             this.CustomerLabel.Text = "Customers";
+            this.CustomerLabel.Click += new System.EventHandler(this.CustomerLabel_Click);
             // 
             // DevicesLabel
             // 
@@ -96,15 +97,16 @@
             this.Status.TabIndex = 7;
             this.Status.TabStop = false;
             // 
-            // pictureBox1
+            // Customers
             // 
-            this.pictureBox1.Image = global::Projector_service_app.Properties.Resources.profle;
-            this.pictureBox1.Location = new System.Drawing.Point(102, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(50, 50);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 6;
-            this.pictureBox1.TabStop = false;
+            this.Customers.Image = global::Projector_service_app.Properties.Resources.profle;
+            this.Customers.Location = new System.Drawing.Point(102, 12);
+            this.Customers.Name = "Customers";
+            this.Customers.Size = new System.Drawing.Size(50, 50);
+            this.Customers.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Customers.TabIndex = 6;
+            this.Customers.TabStop = false;
+            this.Customers.Click += new System.EventHandler(this.Customers_Click);
             // 
             // Devices
             // 
@@ -138,7 +140,7 @@
             this.ClientSize = new System.Drawing.Size(333, 94);
             this.ControlBox = false;
             this.Controls.Add(this.Status);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.Customers);
             this.Controls.Add(this.Devices);
             this.Controls.Add(this.Exit);
             this.Controls.Add(this.ExitLabel);
@@ -152,7 +154,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Menu";
             ((System.ComponentModel.ISupportInitialize)(this.Status)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Customers)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Devices)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Exit)).EndInit();
             this.ResumeLayout(false);
@@ -168,7 +170,7 @@
         private System.Windows.Forms.Label ExitLabel;
         private System.Windows.Forms.PictureBox Exit;
         private System.Windows.Forms.PictureBox Devices;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox Customers;
         private System.Windows.Forms.PictureBox Status;
     }
 }

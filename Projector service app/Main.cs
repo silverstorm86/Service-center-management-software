@@ -13,9 +13,7 @@ namespace Projector_service_app
 {
     public partial class Main : Form
     {
-        /*List<Customer> cm;
-        
-        DataSerializer c = new DataSerializer();*/
+        private CustomerForm cf;
         private DeviceForm df;
         public Main()
         {
@@ -46,8 +44,7 @@ namespace Projector_service_app
         {
             this.Close();
         }
-
-        private void Devices_Click(object sender, EventArgs e)
+        private void DevicesButtonActivate()
         {
             df = new DeviceForm
             {
@@ -55,27 +52,32 @@ namespace Projector_service_app
             };
             df.ShowDialog();
         }
+        private void Devices_Click(object sender, EventArgs e)
+        {
+            DevicesButtonActivate();
+        }
 
         private void DevicesLabel_Click(object sender, EventArgs e)
         {
-            df = new DeviceForm 
-            { 
-            StartPosition = FormStartPosition.CenterScreen
+            DevicesButtonActivate();
+        }
+        private void CustomersButtonActivate()
+        {
+            cf = new CustomerForm
+            {
+                StartPosition = FormStartPosition.CenterScreen
             };
-            df.ShowDialog();
+            cf.ShowDialog();
         }
 
-
-        /*private void button1_Click(object sender, EventArgs e)
+        private void Customers_Click(object sender, EventArgs e)
         {
-            cm = new List<Customer>();
+            CustomersButtonActivate();
+        }
 
-            c.SerializeCustomer(cm);
-            List<Customer> cs = c.DeserializeCustomer();
-
-            var bindingList = new BindingList<Customer>(cs);
-            var source = new BindingSource(bindingList, null);
-            dataGridView1.DataSource = source;
-        }*/
+        private void CustomerLabel_Click(object sender, EventArgs e)
+        {
+            CustomersButtonActivate();
+        }
     }
 }
