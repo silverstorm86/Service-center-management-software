@@ -34,17 +34,27 @@ namespace Projector_service_app
             BindingSource source = new BindingSource(bindingList, null);
 
             ListOfDevices.DataSource = source;
-
         }
 
         private void AddDevice_Click(object sender, EventArgs e)
         {
-            devices.Add(new Device { Model = ModelText.Text, Type = TypeText.Text });
-            serializer.SerializeDevice(devices);
-            devices = null;
-            BindDevices();
-            ModelText.Text = null;
-            TypeText.Text = null;
+            var findTheSame = from s in devices
+                          where s.Model == ModelText.Text
+                          select s.Model;
+
+            if (findTheSame.Count() != 0)
+            {
+                MessageBox.Show("The model must be unique!");
+            }
+            else
+            {
+                devices.Add(new Device { Model = ModelText.Text, Type = TypeText.Text });
+                serializer.SerializeDevice(devices);
+                devices = null;
+                BindDevices();
+                ModelText.Text = null;
+                TypeText.Text = null;
+            }
         }
     }
 }

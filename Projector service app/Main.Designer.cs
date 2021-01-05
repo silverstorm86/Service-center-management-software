@@ -45,6 +45,7 @@
             // StatusLabel
             // 
             this.StatusLabel.AutoSize = true;
+            this.StatusLabel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.StatusLabel.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.StatusLabel.Location = new System.Drawing.Point(10, 66);
             this.StatusLabel.Name = "StatusLabel";
@@ -55,6 +56,7 @@
             // CustomerLabel
             // 
             this.CustomerLabel.AutoSize = true;
+            this.CustomerLabel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CustomerLabel.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CustomerLabel.Location = new System.Drawing.Point(80, 66);
             this.CustomerLabel.Name = "CustomerLabel";
@@ -89,6 +91,7 @@
             // 
             // Status
             // 
+            this.Status.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Status.Image = global::Projector_service_app.Properties.Resources.volume;
             this.Status.Location = new System.Drawing.Point(12, 12);
             this.Status.Name = "Status";
@@ -99,6 +102,7 @@
             // 
             // Customers
             // 
+            this.Customers.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Customers.Image = global::Projector_service_app.Properties.Resources.profle;
             this.Customers.Location = new System.Drawing.Point(102, 12);
             this.Customers.Name = "Customers";

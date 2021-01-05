@@ -30,23 +30,23 @@
         {
             this.ListOfCustomers = new System.Windows.Forms.DataGridView();
             this.Add = new System.Windows.Forms.GroupBox();
-            this.NameLabel = new System.Windows.Forms.Label();
-            this.NameText = new System.Windows.Forms.TextBox();
-            this.PostalCodeText = new System.Windows.Forms.TextBox();
-            this.PostalCodeLabel = new System.Windows.Forms.Label();
-            this.TownText = new System.Windows.Forms.TextBox();
-            this.TownLabel = new System.Windows.Forms.Label();
-            this.AddressText = new System.Windows.Forms.TextBox();
-            this.AddressLabel = new System.Windows.Forms.Label();
-            this.VATText = new System.Windows.Forms.TextBox();
-            this.VatNumberLabel = new System.Windows.Forms.Label();
-            this.ContactText = new System.Windows.Forms.TextBox();
-            this.ContactLabel = new System.Windows.Forms.Label();
-            this.EmailText = new System.Windows.Forms.TextBox();
-            this.EmailLabel = new System.Windows.Forms.Label();
+            this.AddCustomer = new System.Windows.Forms.Button();
             this.PhoneText = new System.Windows.Forms.TextBox();
             this.PhoneNumLabel = new System.Windows.Forms.Label();
-            this.AddCustomer = new System.Windows.Forms.Button();
+            this.EmailText = new System.Windows.Forms.TextBox();
+            this.EmailLabel = new System.Windows.Forms.Label();
+            this.ContactText = new System.Windows.Forms.TextBox();
+            this.ContactLabel = new System.Windows.Forms.Label();
+            this.VatNumberLabel = new System.Windows.Forms.Label();
+            this.AddressText = new System.Windows.Forms.TextBox();
+            this.AddressLabel = new System.Windows.Forms.Label();
+            this.TownText = new System.Windows.Forms.TextBox();
+            this.TownLabel = new System.Windows.Forms.Label();
+            this.PostalCodeText = new System.Windows.Forms.TextBox();
+            this.PostalCodeLabel = new System.Windows.Forms.Label();
+            this.NameText = new System.Windows.Forms.TextBox();
+            this.NameLabel = new System.Windows.Forms.Label();
+            this.VATText = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.ListOfCustomers)).BeginInit();
             this.Add.SuspendLayout();
             this.SuspendLayout();
@@ -64,6 +64,7 @@
             // 
             // Add
             // 
+            this.Add.Controls.Add(this.VATText);
             this.Add.Controls.Add(this.AddCustomer);
             this.Add.Controls.Add(this.PhoneText);
             this.Add.Controls.Add(this.PhoneNumLabel);
@@ -71,7 +72,6 @@
             this.Add.Controls.Add(this.EmailLabel);
             this.Add.Controls.Add(this.ContactText);
             this.Add.Controls.Add(this.ContactLabel);
-            this.Add.Controls.Add(this.VATText);
             this.Add.Controls.Add(this.VatNumberLabel);
             this.Add.Controls.Add(this.AddressText);
             this.Add.Controls.Add(this.AddressLabel);
@@ -88,85 +88,49 @@
             this.Add.TabStop = false;
             this.Add.Text = "Adding new customer";
             // 
-            // NameLabel
+            // AddCustomer
             // 
-            this.NameLabel.AutoSize = true;
-            this.NameLabel.Location = new System.Drawing.Point(17, 35);
-            this.NameLabel.Name = "NameLabel";
-            this.NameLabel.Size = new System.Drawing.Size(83, 13);
-            this.NameLabel.TabIndex = 0;
-            this.NameLabel.Text = "Company name:";
+            this.AddCustomer.Location = new System.Drawing.Point(112, 306);
+            this.AddCustomer.Name = "AddCustomer";
+            this.AddCustomer.Size = new System.Drawing.Size(101, 31);
+            this.AddCustomer.TabIndex = 16;
+            this.AddCustomer.Text = "Add Customer";
+            this.AddCustomer.UseVisualStyleBackColor = true;
+            this.AddCustomer.Click += new System.EventHandler(this.AddCustomer_Click);
             // 
-            // NameText
+            // PhoneText
             // 
-            this.NameText.Location = new System.Drawing.Point(100, 32);
-            this.NameText.Name = "NameText";
-            this.NameText.Size = new System.Drawing.Size(199, 20);
-            this.NameText.TabIndex = 1;
+            this.PhoneText.Location = new System.Drawing.Point(99, 261);
+            this.PhoneText.Name = "PhoneText";
+            this.PhoneText.Size = new System.Drawing.Size(200, 20);
+            this.PhoneText.TabIndex = 15;
+            this.PhoneText.Validating += new System.ComponentModel.CancelEventHandler(this.PhoneText_Validating);
             // 
-            // PostalCodeText
+            // PhoneNumLabel
             // 
-            this.PostalCodeText.Location = new System.Drawing.Point(99, 69);
-            this.PostalCodeText.Name = "PostalCodeText";
-            this.PostalCodeText.Size = new System.Drawing.Size(36, 20);
-            this.PostalCodeText.TabIndex = 3;
+            this.PhoneNumLabel.AutoSize = true;
+            this.PhoneNumLabel.Location = new System.Drawing.Point(17, 264);
+            this.PhoneNumLabel.Name = "PhoneNumLabel";
+            this.PhoneNumLabel.Size = new System.Drawing.Size(79, 13);
+            this.PhoneNumLabel.TabIndex = 14;
+            this.PhoneNumLabel.Text = "Phone number:";
             // 
-            // PostalCodeLabel
+            // EmailText
             // 
-            this.PostalCodeLabel.AutoSize = true;
-            this.PostalCodeLabel.Location = new System.Drawing.Point(17, 72);
-            this.PostalCodeLabel.Name = "PostalCodeLabel";
-            this.PostalCodeLabel.Size = new System.Drawing.Size(66, 13);
-            this.PostalCodeLabel.TabIndex = 2;
-            this.PostalCodeLabel.Text = "Postal code:";
+            this.EmailText.Location = new System.Drawing.Point(99, 229);
+            this.EmailText.Name = "EmailText";
+            this.EmailText.Size = new System.Drawing.Size(200, 20);
+            this.EmailText.TabIndex = 13;
+            this.EmailText.Validating += new System.ComponentModel.CancelEventHandler(this.EmailText_Validating);
             // 
-            // TownText
+            // EmailLabel
             // 
-            this.TownText.Location = new System.Drawing.Point(185, 69);
-            this.TownText.Name = "TownText";
-            this.TownText.Size = new System.Drawing.Size(114, 20);
-            this.TownText.TabIndex = 5;
-            // 
-            // TownLabel
-            // 
-            this.TownLabel.AutoSize = true;
-            this.TownLabel.Location = new System.Drawing.Point(142, 72);
-            this.TownLabel.Name = "TownLabel";
-            this.TownLabel.Size = new System.Drawing.Size(37, 13);
-            this.TownLabel.TabIndex = 4;
-            this.TownLabel.Text = "Town:";
-            // 
-            // AddressText
-            // 
-            this.AddressText.Location = new System.Drawing.Point(100, 112);
-            this.AddressText.Name = "AddressText";
-            this.AddressText.Size = new System.Drawing.Size(199, 20);
-            this.AddressText.TabIndex = 7;
-            // 
-            // AddressLabel
-            // 
-            this.AddressLabel.AutoSize = true;
-            this.AddressLabel.Location = new System.Drawing.Point(17, 112);
-            this.AddressLabel.Name = "AddressLabel";
-            this.AddressLabel.Size = new System.Drawing.Size(48, 13);
-            this.AddressLabel.TabIndex = 6;
-            this.AddressLabel.Text = "Address:";
-            // 
-            // VATText
-            // 
-            this.VATText.Location = new System.Drawing.Point(99, 150);
-            this.VATText.Name = "VATText";
-            this.VATText.Size = new System.Drawing.Size(87, 20);
-            this.VATText.TabIndex = 9;
-            // 
-            // VatNumberLabel
-            // 
-            this.VatNumberLabel.AutoSize = true;
-            this.VatNumberLabel.Location = new System.Drawing.Point(17, 153);
-            this.VatNumberLabel.Name = "VatNumberLabel";
-            this.VatNumberLabel.Size = new System.Drawing.Size(69, 13);
-            this.VatNumberLabel.TabIndex = 8;
-            this.VatNumberLabel.Text = "VAT number:";
+            this.EmailLabel.AutoSize = true;
+            this.EmailLabel.Location = new System.Drawing.Point(17, 232);
+            this.EmailLabel.Name = "EmailLabel";
+            this.EmailLabel.Size = new System.Drawing.Size(35, 13);
+            this.EmailLabel.TabIndex = 12;
+            this.EmailLabel.Text = "Email:";
             // 
             // ContactText
             // 
@@ -184,46 +148,88 @@
             this.ContactLabel.TabIndex = 10;
             this.ContactLabel.Text = "Contact name:";
             // 
-            // EmailText
+            // VatNumberLabel
             // 
-            this.EmailText.Location = new System.Drawing.Point(99, 229);
-            this.EmailText.Name = "EmailText";
-            this.EmailText.Size = new System.Drawing.Size(200, 20);
-            this.EmailText.TabIndex = 13;
+            this.VatNumberLabel.AutoSize = true;
+            this.VatNumberLabel.Location = new System.Drawing.Point(17, 153);
+            this.VatNumberLabel.Name = "VatNumberLabel";
+            this.VatNumberLabel.Size = new System.Drawing.Size(69, 13);
+            this.VatNumberLabel.TabIndex = 8;
+            this.VatNumberLabel.Text = "VAT number:";
             // 
-            // EmailLabel
+            // AddressText
             // 
-            this.EmailLabel.AutoSize = true;
-            this.EmailLabel.Location = new System.Drawing.Point(17, 232);
-            this.EmailLabel.Name = "EmailLabel";
-            this.EmailLabel.Size = new System.Drawing.Size(35, 13);
-            this.EmailLabel.TabIndex = 12;
-            this.EmailLabel.Text = "Email:";
+            this.AddressText.Location = new System.Drawing.Point(100, 112);
+            this.AddressText.Name = "AddressText";
+            this.AddressText.Size = new System.Drawing.Size(199, 20);
+            this.AddressText.TabIndex = 7;
             // 
-            // PhoneText
+            // AddressLabel
             // 
-            this.PhoneText.Location = new System.Drawing.Point(99, 261);
-            this.PhoneText.Name = "PhoneText";
-            this.PhoneText.Size = new System.Drawing.Size(200, 20);
-            this.PhoneText.TabIndex = 15;
+            this.AddressLabel.AutoSize = true;
+            this.AddressLabel.Location = new System.Drawing.Point(17, 112);
+            this.AddressLabel.Name = "AddressLabel";
+            this.AddressLabel.Size = new System.Drawing.Size(48, 13);
+            this.AddressLabel.TabIndex = 6;
+            this.AddressLabel.Text = "Address:";
             // 
-            // PhoneNumLabel
+            // TownText
             // 
-            this.PhoneNumLabel.AutoSize = true;
-            this.PhoneNumLabel.Location = new System.Drawing.Point(17, 264);
-            this.PhoneNumLabel.Name = "PhoneNumLabel";
-            this.PhoneNumLabel.Size = new System.Drawing.Size(79, 13);
-            this.PhoneNumLabel.TabIndex = 14;
-            this.PhoneNumLabel.Text = "Phone number:";
+            this.TownText.Location = new System.Drawing.Point(185, 69);
+            this.TownText.Name = "TownText";
+            this.TownText.Size = new System.Drawing.Size(114, 20);
+            this.TownText.TabIndex = 5;
             // 
-            // AddCustomer
+            // TownLabel
             // 
-            this.AddCustomer.Location = new System.Drawing.Point(120, 306);
-            this.AddCustomer.Name = "AddCustomer";
-            this.AddCustomer.Size = new System.Drawing.Size(101, 31);
-            this.AddCustomer.TabIndex = 16;
-            this.AddCustomer.Text = "Add Customer";
-            this.AddCustomer.UseVisualStyleBackColor = true;
+            this.TownLabel.AutoSize = true;
+            this.TownLabel.Location = new System.Drawing.Point(142, 72);
+            this.TownLabel.Name = "TownLabel";
+            this.TownLabel.Size = new System.Drawing.Size(37, 13);
+            this.TownLabel.TabIndex = 4;
+            this.TownLabel.Text = "Town:";
+            // 
+            // PostalCodeText
+            // 
+            this.PostalCodeText.Location = new System.Drawing.Point(99, 69);
+            this.PostalCodeText.MaxLength = 4;
+            this.PostalCodeText.Name = "PostalCodeText";
+            this.PostalCodeText.Size = new System.Drawing.Size(36, 20);
+            this.PostalCodeText.TabIndex = 3;
+            this.PostalCodeText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PostalCodeText_KeyPress);
+            // 
+            // PostalCodeLabel
+            // 
+            this.PostalCodeLabel.AutoSize = true;
+            this.PostalCodeLabel.Location = new System.Drawing.Point(17, 72);
+            this.PostalCodeLabel.Name = "PostalCodeLabel";
+            this.PostalCodeLabel.Size = new System.Drawing.Size(66, 13);
+            this.PostalCodeLabel.TabIndex = 2;
+            this.PostalCodeLabel.Text = "Postal code:";
+            // 
+            // NameText
+            // 
+            this.NameText.Location = new System.Drawing.Point(100, 32);
+            this.NameText.Name = "NameText";
+            this.NameText.Size = new System.Drawing.Size(199, 20);
+            this.NameText.TabIndex = 1;
+            // 
+            // NameLabel
+            // 
+            this.NameLabel.AutoSize = true;
+            this.NameLabel.Location = new System.Drawing.Point(17, 35);
+            this.NameLabel.Name = "NameLabel";
+            this.NameLabel.Size = new System.Drawing.Size(83, 13);
+            this.NameLabel.TabIndex = 0;
+            this.NameLabel.Text = "Company name:";
+            // 
+            // VATText
+            // 
+            this.VATText.Location = new System.Drawing.Point(99, 150);
+            this.VATText.Mask = "00000000-0-00";
+            this.VATText.Name = "VATText";
+            this.VATText.Size = new System.Drawing.Size(100, 20);
+            this.VATText.TabIndex = 17;
             // 
             // CustomerForm
             // 
@@ -255,7 +261,6 @@
         private System.Windows.Forms.Label TownLabel;
         private System.Windows.Forms.TextBox AddressText;
         private System.Windows.Forms.Label AddressLabel;
-        private System.Windows.Forms.TextBox VATText;
         private System.Windows.Forms.Label VatNumberLabel;
         private System.Windows.Forms.TextBox PhoneText;
         private System.Windows.Forms.Label PhoneNumLabel;
@@ -264,5 +269,6 @@
         private System.Windows.Forms.TextBox ContactText;
         private System.Windows.Forms.Label ContactLabel;
         private System.Windows.Forms.Button AddCustomer;
+        private System.Windows.Forms.MaskedTextBox VATText;
     }
 }
