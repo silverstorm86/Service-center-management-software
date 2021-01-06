@@ -52,6 +52,7 @@
             this.StatusLabel.Size = new System.Drawing.Size(55, 22);
             this.StatusLabel.TabIndex = 0;
             this.StatusLabel.Text = "Status";
+            this.StatusLabel.Click += new System.EventHandler(this.StatusLabel_Click);
             // 
             // CustomerLabel
             // 
@@ -99,6 +100,7 @@
             this.Status.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Status.TabIndex = 7;
             this.Status.TabStop = false;
+            this.Status.Click += new System.EventHandler(this.Status_Click);
             // 
             // Customers
             // 

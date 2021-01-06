@@ -43,6 +43,7 @@
             // 
             this.ListOfDevices.AllowUserToAddRows = false;
             this.ListOfDevices.AllowUserToDeleteRows = false;
+            this.ListOfDevices.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.ListOfDevices.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ListOfDevices.Location = new System.Drawing.Point(12, 12);
             this.ListOfDevices.Name = "ListOfDevices";

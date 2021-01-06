@@ -33,11 +33,15 @@ namespace Projector_service_app
                 MessageBox.Show("No writen data!");
             }
 
+            customers = customers.OrderBy(x => x.Name).ToList();
             BindingList<Customer> bindingList = new BindingList<Customer>(customers);
             BindingSource source = new BindingSource(bindingList, null);
 
             ListOfCustomers.DataSource = source;
+            ListOfCustomers.Columns[0].Visible = false;
+                                    
         }
+        
 
         private void AddCustomer_Click(object sender, EventArgs e)
         {

@@ -15,6 +15,7 @@ namespace Projector_service_app
     {
         private CustomerForm cf;
         private DeviceForm df;
+        private Status st;
         public Main()
         {
             InitializeComponent();
@@ -78,6 +79,25 @@ namespace Projector_service_app
         private void CustomerLabel_Click(object sender, EventArgs e)
         {
             CustomersButtonActivate();
+        }
+        private void StatusButtonActivate() 
+        {
+            st = new Status
+            {
+                StartPosition = FormStartPosition.CenterScreen
+            };
+            st.ShowDialog();
+        }
+
+
+        private void Status_Click(object sender, EventArgs e)
+        {
+            StatusButtonActivate();
+        }
+
+        private void StatusLabel_Click(object sender, EventArgs e)
+        {
+            StatusButtonActivate();
         }
     }
 }

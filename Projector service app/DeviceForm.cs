@@ -30,6 +30,8 @@ namespace Projector_service_app
                 MessageBox.Show("No writen data!");
             }
 
+            devices = devices.OrderBy(x => x.Type).ToList();
+
             BindingList<Device> bindingList = new BindingList<Device>(devices);
             BindingSource source = new BindingSource(bindingList, null);
 
@@ -41,20 +43,24 @@ namespace Projector_service_app
             var findTheSame = from s in devices
                           where s.Model == ModelText.Text
                           select s.Model;
-
-            if (findTheSame.Count() != 0)
+            if (ModelText.Text != "" && TypeText.Text != "")
             {
-                MessageBox.Show("The model must be unique!");
+                if (findTheSame.Count() != 0)
+                {
+                    MessageBox.Show("The model must be unique!");
+                }
+                else
+                {
+                    devices.Add(new Device { Model = ModelText.Text, Type = TypeText.Text });
+                    serializer.SerializeDevice(devices);
+                    devices = null;
+                    BindDevices();
+                    ModelText.Text = null;
+                    TypeText.Text = null;
+                }
             }
             else
-            {
-                devices.Add(new Device { Model = ModelText.Text, Type = TypeText.Text });
-                serializer.SerializeDevice(devices);
-                devices = null;
-                BindDevices();
-                ModelText.Text = null;
-                TypeText.Text = null;
-            }
+                MessageBox.Show("Some forms are not filled out!");
         }
     }
 }

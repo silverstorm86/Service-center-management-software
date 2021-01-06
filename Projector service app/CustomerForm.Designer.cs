@@ -30,6 +30,7 @@
         {
             this.ListOfCustomers = new System.Windows.Forms.DataGridView();
             this.Add = new System.Windows.Forms.GroupBox();
+            this.VATText = new System.Windows.Forms.MaskedTextBox();
             this.AddCustomer = new System.Windows.Forms.Button();
             this.PhoneText = new System.Windows.Forms.TextBox();
             this.PhoneNumLabel = new System.Windows.Forms.Label();
@@ -46,7 +47,6 @@
             this.PostalCodeLabel = new System.Windows.Forms.Label();
             this.NameText = new System.Windows.Forms.TextBox();
             this.NameLabel = new System.Windows.Forms.Label();
-            this.VATText = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.ListOfCustomers)).BeginInit();
             this.Add.SuspendLayout();
             this.SuspendLayout();
@@ -55,6 +55,7 @@
             // 
             this.ListOfCustomers.AllowUserToAddRows = false;
             this.ListOfCustomers.AllowUserToDeleteRows = false;
+            this.ListOfCustomers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.ListOfCustomers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ListOfCustomers.Location = new System.Drawing.Point(12, 12);
             this.ListOfCustomers.Name = "ListOfCustomers";
@@ -87,6 +88,14 @@
             this.Add.TabIndex = 1;
             this.Add.TabStop = false;
             this.Add.Text = "Adding new customer";
+            // 
+            // VATText
+            // 
+            this.VATText.Location = new System.Drawing.Point(99, 150);
+            this.VATText.Mask = "00000000-0-00";
+            this.VATText.Name = "VATText";
+            this.VATText.Size = new System.Drawing.Size(100, 20);
+            this.VATText.TabIndex = 17;
             // 
             // AddCustomer
             // 
@@ -222,14 +231,6 @@
             this.NameLabel.Size = new System.Drawing.Size(83, 13);
             this.NameLabel.TabIndex = 0;
             this.NameLabel.Text = "Company name:";
-            // 
-            // VATText
-            // 
-            this.VATText.Location = new System.Drawing.Point(99, 150);
-            this.VATText.Mask = "00000000-0-00";
-            this.VATText.Name = "VATText";
-            this.VATText.Size = new System.Drawing.Size(100, 20);
-            this.VATText.TabIndex = 17;
             // 
             // CustomerForm
             // 
