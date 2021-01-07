@@ -18,6 +18,7 @@ namespace Projector_service_app
         {
             InitializeComponent();
             BindDevices();
+            SelectVisibleOrNot.Visible = false;
         }
         private void BindDevices() 
         {

@@ -16,13 +16,15 @@ namespace Projector_service_app
     {
         private List<Customer> customers = new List<Customer>();
         private readonly DataSerializer serializer = new DataSerializer();
+        private string searchWord = "";
         public CustomerForm()
         {
             InitializeComponent();
-            BindCustomer();
+            BindCustomer(searchWord);
+            SelectVisibleOrNot.Visible = false;
         }
 
-        private void BindCustomer()
+        private void BindCustomer(string searchWord)
         {
             try
             {
@@ -34,6 +36,10 @@ namespace Projector_service_app
             }
 
             customers = customers.OrderBy(x => x.Name).ToList();
+            /*if (searchWord != "")
+            {
+                customers = customers.Find(x => x.Name.Contains(searchWord));
+            }*/
             BindingList<Customer> bindingList = new BindingList<Customer>(customers);
             BindingSource source = new BindingSource(bindingList, null);
 
@@ -59,7 +65,7 @@ namespace Projector_service_app
 
             serializer.SerializeCustomer(customers);
 
-            BindCustomer();
+            BindCustomer(searchWord);
 
         }
 
@@ -106,6 +112,12 @@ namespace Projector_service_app
                 PhoneText.Focus();
              };
             
+        }
+
+        private void CompanySearchText_TextChanged(object sender, EventArgs e)
+        {
+            searchWord = CompanySearchText.Text;
+            BindCustomer(searchWord);
         }
     }         
 }           
