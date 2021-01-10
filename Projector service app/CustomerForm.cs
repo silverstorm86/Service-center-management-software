@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Net.Mail;
 using System.Text.RegularExpressions;
+using System.Windows.Documents;
 
 namespace Projector_service_app
 {
@@ -34,12 +35,29 @@ namespace Projector_service_app
             {
                 MessageBox.Show("No writen data!");
             }
+            customers = customers.OrderBy(x => x.CompName).ToList();
 
-            customers = customers.OrderBy(x => x.Name).ToList();
-            /*if (searchWord != "")
+            if (searchWord != "")
             {
-                customers = customers.Find(x => x.Name.Contains(searchWord));
-            }*/
+                /*customers = customers.Find(x => x.Name.Contains(searchWord));*/
+
+                List<Customer> result = new List<Customer>();
+                for (int i = 0; i < customers.Count(); i++)
+                {
+                    MessageBox.Show(customers[i].Address);
+                   /* if (customers[i].CompName.IndexOf(searchWord) >= 0 || customers[i].CompName != null)
+                    {
+                        result.Add(customers[i]);
+                    }
+                    */
+
+                    //customers = result;
+                }
+
+            }
+
+            
+
             BindingList<Customer> bindingList = new BindingList<Customer>(customers);
             BindingSource source = new BindingSource(bindingList, null);
 
@@ -53,7 +71,7 @@ namespace Projector_service_app
         {
             customers.Add(new Customer {
                 Id = customers.Count(),
-                Name = NameText.Text,
+                CompName = NameText.Text,
                 PostalCode = Convert.ToInt32(PostalCodeText.Text),
                 Town = TownText.Text,
                 Address = AddressText.Text,
@@ -118,6 +136,17 @@ namespace Projector_service_app
         {
             searchWord = CompanySearchText.Text;
             BindCustomer(searchWord);
+        }
+
+        private void ListOfCustomers_VisibleChanged(object sender, EventArgs e)
+        {
+            for (int i = 0; i < ListOfCustomers.Rows.Count; i++)
+            {
+                if (i % 2 != 0)
+                {
+                    ListOfCustomers.Rows[i].DefaultCellStyle.BackColor = Color.LightGray;
+                }
+            }
         }
     }         
 }           

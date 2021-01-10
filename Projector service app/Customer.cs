@@ -12,7 +12,7 @@ namespace Projector_service_app
     {
         //Customer Id is always Uniqe
         public int Id { get; set; } 
-        public string Name { get; set; }
+        public string CompName { get; set; }
         public int  PostalCode { get; set; }
         public string Town { get; set; }
         public string Address { get; set; }
