@@ -39,21 +39,16 @@ namespace Projector_service_app
 
             if (searchWord != "")
             {
-                /*customers = customers.Find(x => x.Name.Contains(searchWord));*/
-
                 List<Customer> result = new List<Customer>();
                 for (int i = 0; i < customers.Count(); i++)
                 {
-                    MessageBox.Show(customers[i].Address);
-                   /* if (customers[i].CompName.IndexOf(searchWord) >= 0 || customers[i].CompName != null)
+                   if (customers[i].CompName.ToUpper().Contains(searchWord.ToUpper()))
                     {
                         result.Add(customers[i]);
                     }
-                    */
-
-                    //customers = result;
+                    
                 }
-
+                customers = result;
             }
 
             
@@ -65,7 +60,19 @@ namespace Projector_service_app
             ListOfCustomers.Columns[0].Visible = false;
                                     
         }
-        
+        private void ClearTextboxes()
+        {
+
+            NameText.Text = string.Empty;
+            PostalCodeText.Text = string.Empty;
+            TownText.Text = string.Empty;
+            AddressText.Text = string.Empty;
+            VATText.Text = string.Empty;
+            ContactText.Text = string.Empty;
+            EmailText.Text = string.Empty;
+            PhoneText.Text = string.Empty;
+
+        }
 
         private void AddCustomer_Click(object sender, EventArgs e)
         {
@@ -85,7 +92,11 @@ namespace Projector_service_app
 
             BindCustomer(searchWord);
 
+            ListOfCustomers_VisibleChanged(this, new EventArgs());
+
+            ClearTextboxes();
         }
+               
 
         private void PostalCodeText_KeyPress(object sender, KeyPressEventArgs e)
         {

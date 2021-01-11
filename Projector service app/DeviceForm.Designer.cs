@@ -38,10 +38,10 @@
             this.SelectVisibleOrNot = new System.Windows.Forms.GroupBox();
             this.SelectButton = new System.Windows.Forms.Button();
             this.Search = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.SearchModel = new System.Windows.Forms.TextBox();
+            this.SearchModelLabel = new System.Windows.Forms.Label();
+            this.SearchTypeLabel = new System.Windows.Forms.Label();
+            this.SearchType = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.ListOfDevices)).BeginInit();
             this.Add.SuspendLayout();
             this.SelectVisibleOrNot.SuspendLayout();
@@ -55,12 +55,13 @@
             this.ListOfDevices.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.ListOfDevices.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ListOfDevices.Location = new System.Drawing.Point(16, 15);
-            this.ListOfDevices.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ListOfDevices.Margin = new System.Windows.Forms.Padding(4);
             this.ListOfDevices.Name = "ListOfDevices";
             this.ListOfDevices.ReadOnly = true;
             this.ListOfDevices.RowHeadersWidth = 51;
             this.ListOfDevices.Size = new System.Drawing.Size(368, 449);
             this.ListOfDevices.TabIndex = 0;
+            this.ListOfDevices.VisibleChanged += new System.EventHandler(this.ListOfDevices_VisibleChanged);
             // 
             // Add
             // 
@@ -70,9 +71,9 @@
             this.Add.Controls.Add(this.TypeText);
             this.Add.Controls.Add(this.TypeLabel);
             this.Add.Location = new System.Drawing.Point(409, 15);
-            this.Add.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Add.Margin = new System.Windows.Forms.Padding(4);
             this.Add.Name = "Add";
-            this.Add.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Add.Padding = new System.Windows.Forms.Padding(4);
             this.Add.Size = new System.Drawing.Size(267, 214);
             this.Add.TabIndex = 1;
             this.Add.TabStop = false;
@@ -81,7 +82,7 @@
             // ModelText
             // 
             this.ModelText.Location = new System.Drawing.Point(44, 112);
-            this.ModelText.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ModelText.Margin = new System.Windows.Forms.Padding(4);
             this.ModelText.Name = "ModelText";
             this.ModelText.Size = new System.Drawing.Size(180, 22);
             this.ModelText.TabIndex = 4;
@@ -99,7 +100,7 @@
             // AddDevice
             // 
             this.AddDevice.Location = new System.Drawing.Point(79, 152);
-            this.AddDevice.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AddDevice.Margin = new System.Windows.Forms.Padding(4);
             this.AddDevice.Name = "AddDevice";
             this.AddDevice.Size = new System.Drawing.Size(117, 38);
             this.AddDevice.TabIndex = 2;
@@ -110,7 +111,7 @@
             // TypeText
             // 
             this.TypeText.Location = new System.Drawing.Point(44, 55);
-            this.TypeText.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TypeText.Margin = new System.Windows.Forms.Padding(4);
             this.TypeText.Name = "TypeText";
             this.TypeText.Size = new System.Drawing.Size(180, 22);
             this.TypeText.TabIndex = 1;
@@ -146,10 +147,10 @@
             // 
             // Search
             // 
-            this.Search.Controls.Add(this.textBox1);
-            this.Search.Controls.Add(this.label1);
-            this.Search.Controls.Add(this.label2);
-            this.Search.Controls.Add(this.textBox2);
+            this.Search.Controls.Add(this.SearchModel);
+            this.Search.Controls.Add(this.SearchModelLabel);
+            this.Search.Controls.Add(this.SearchTypeLabel);
+            this.Search.Controls.Add(this.SearchType);
             this.Search.Location = new System.Drawing.Point(409, 236);
             this.Search.Name = "Search";
             this.Search.Size = new System.Drawing.Size(267, 157);
@@ -157,41 +158,43 @@
             this.Search.TabStop = false;
             this.Search.Text = "Search";
             // 
-            // textBox1
+            // SearchModel
             // 
-            this.textBox1.Location = new System.Drawing.Point(43, 105);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(180, 22);
-            this.textBox1.TabIndex = 8;
+            this.SearchModel.Location = new System.Drawing.Point(43, 105);
+            this.SearchModel.Margin = new System.Windows.Forms.Padding(4);
+            this.SearchModel.Name = "SearchModel";
+            this.SearchModel.Size = new System.Drawing.Size(180, 22);
+            this.SearchModel.TabIndex = 8;
+            this.SearchModel.TextChanged += new System.EventHandler(this.SearchModel_TextChanged);
             // 
-            // label1
+            // SearchModelLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(39, 84);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(50, 17);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Model:";
+            this.SearchModelLabel.AutoSize = true;
+            this.SearchModelLabel.Location = new System.Drawing.Point(39, 84);
+            this.SearchModelLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.SearchModelLabel.Name = "SearchModelLabel";
+            this.SearchModelLabel.Size = new System.Drawing.Size(50, 17);
+            this.SearchModelLabel.TabIndex = 7;
+            this.SearchModelLabel.Text = "Model:";
             // 
-            // textBox2
+            // SearchTypeLabel
             // 
-            this.textBox2.Location = new System.Drawing.Point(43, 48);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(180, 22);
-            this.textBox2.TabIndex = 6;
+            this.SearchTypeLabel.AutoSize = true;
+            this.SearchTypeLabel.Location = new System.Drawing.Point(39, 27);
+            this.SearchTypeLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.SearchTypeLabel.Name = "SearchTypeLabel";
+            this.SearchTypeLabel.Size = new System.Drawing.Size(44, 17);
+            this.SearchTypeLabel.TabIndex = 5;
+            this.SearchTypeLabel.Text = "Type:";
             // 
-            // label2
+            // SearchType
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(39, 27);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 17);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Type:";
+            this.SearchType.Location = new System.Drawing.Point(43, 48);
+            this.SearchType.Margin = new System.Windows.Forms.Padding(4);
+            this.SearchType.Name = "SearchType";
+            this.SearchType.Size = new System.Drawing.Size(180, 22);
+            this.SearchType.TabIndex = 6;
+            this.SearchType.TextChanged += new System.EventHandler(this.SearchType_TextChanged);
             // 
             // DeviceForm
             // 
@@ -202,7 +205,7 @@
             this.Controls.Add(this.SelectVisibleOrNot);
             this.Controls.Add(this.Add);
             this.Controls.Add(this.ListOfDevices);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "DeviceForm";
@@ -229,9 +232,9 @@
         private System.Windows.Forms.GroupBox SelectVisibleOrNot;
         private System.Windows.Forms.Button SelectButton;
         private System.Windows.Forms.GroupBox Search;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox SearchModel;
+        private System.Windows.Forms.Label SearchModelLabel;
+        private System.Windows.Forms.Label SearchTypeLabel;
+        private System.Windows.Forms.TextBox SearchType;
     }
 }
