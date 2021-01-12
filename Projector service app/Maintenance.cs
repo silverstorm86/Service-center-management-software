@@ -10,18 +10,21 @@ namespace Projector_service_app
     [Serializable]
     class Maintenance
     {
-        //The CustomerId and the DeviceModel are from other class
+        //The CustomerId, CustomerCompName, DeviceModel and the DeviceType are from other class
         public string Id { get; set; }
         public int CustomerId { get; set; }
+        public string CustomerCompName { get; set; }
+        public string DeviceType { get; set; }
         public string DeviceModel { get; set; }
         public string SerialNumber { get; set; }
         public string ErrorDescription { get; set; }
         public DateTime InDate { get; set; }
-        public DateTime RepairStartDate { get; set; }
+        public string RepairDescription { get; set; }
         public int MaterialCost { get; set; }
         public DateTime OfferDate { get; set; }
         public int Offer { get; set; }
         public bool FixOrNot { get; set; }
+        public DateTime RepairStartDate { get; set; }
         public DateTime RepairFinishDate { get; set; }
         public DateTime OutDate { get; set; }
 
