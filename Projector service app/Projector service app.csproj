@@ -62,6 +62,12 @@
     <Compile Include="DeviceForm.Designer.cs">
       <DependentUpon>DeviceForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="InspectionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InspectionForm.Designer.cs">
+      <DependentUpon>InspectionForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -69,6 +75,30 @@
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
     <Compile Include="Maintenance.cs" />
+    <Compile Include="ModifyRecordForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModifyRecordForm.Designer.cs">
+      <DependentUpon>ModifyRecordForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewReordForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewReordForm.Designer.cs">
+      <DependentUpon>NewReordForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PriceAcceptanceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PriceAcceptanceForm.Designer.cs">
+      <DependentUpon>PriceAcceptanceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PricingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PricingForm.Designer.cs">
+      <DependentUpon>PricingForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Status.cs">
@@ -85,6 +115,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewReordForm.resx">
+      <DependentUpon>NewReordForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
