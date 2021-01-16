@@ -47,7 +47,7 @@ namespace Projector_service_app
         }
         private void DevicesButtonActivate()
         {
-            df = new DeviceForm
+            df = new DeviceForm(0)
             {
                 StartPosition = FormStartPosition.CenterScreen
             };
@@ -64,7 +64,7 @@ namespace Projector_service_app
         }
         private void CustomersButtonActivate()
         {
-            cf = new CustomerForm
+            cf = new CustomerForm(0)
             {
                 StartPosition = FormStartPosition.CenterScreen
             };

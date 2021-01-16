@@ -47,11 +47,21 @@ namespace Projector_service_app
 
         private void NewRecordButton_Click(object sender, EventArgs e)
         {
-            nrf = new NewReordForm
+            nrf = new NewReordForm(maintenances.Count())
             {
                 StartPosition = FormStartPosition.CenterScreen
             };
             nrf.ShowDialog();
+
+            if (nrf.DialogResult == DialogResult.OK)
+            {
+                Maintenance mc = nrf.mt;
+                maintenances.Add(mc);
+                serializer.SerializeMaintenance(maintenances);
+                maintenances = null;
+
+                BindMaintenance();
+            }
         }
     }
     

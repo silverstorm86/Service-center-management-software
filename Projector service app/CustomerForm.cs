@@ -18,11 +18,16 @@ namespace Projector_service_app
         private List<Customer> customers = new List<Customer>();
         private readonly DataSerializer serializer = new DataSerializer();
         private string searchWord = "";
-        public CustomerForm()
+        internal Customer SelectedCustomer { get; set; }
+        public CustomerForm(int select)
         {
             InitializeComponent();
             BindCustomer(searchWord);
-            SelectVisibleOrNot.Visible = false;
+            
+            if(select < 1)
+            {
+                SelectVisibleOrNot.Visible = false;
+            }
         }
 
         private void BindCustomer(string searchWord)
@@ -157,6 +162,25 @@ namespace Projector_service_app
                 {
                     ListOfCustomers.Rows[i].DefaultCellStyle.BackColor = Color.LightGray;
                 }
+            }
+        }
+
+        
+
+        private void ListOfCustomers_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            SelectedCustomer = (Customer)ListOfCustomers.CurrentRow.DataBoundItem;
+        }
+                
+        private void SelectButton_Click(object sender, EventArgs e)
+        {
+            if (SelectedCustomer != default)
+            {
+                this.DialogResult = DialogResult.OK;
+            }
+            else
+            {
+                MessageBox.Show("First choose a customer!");
             }
         }
     }         

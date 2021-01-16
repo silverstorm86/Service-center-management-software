@@ -16,11 +16,15 @@ namespace Projector_service_app
         private readonly DataSerializer serializer = new DataSerializer();
         private string searchTypeS = "";
         private string searchModelS = "";
-        public DeviceForm()
+        internal Device SelectedDevice { get; set; }
+        public DeviceForm(int select)
         {
             InitializeComponent();
             BindDevices(searchTypeS, searchModelS);
-            SelectVisibleOrNot.Visible = false;
+            if (select < 1)
+            {
+                SelectVisibleOrNot.Visible = false;
+            }
         }
         private void BindDevices(string searchTypeS, string searchModelS) 
         {
@@ -122,6 +126,23 @@ namespace Projector_service_app
             searchTypeS = SearchType.Text;
             searchModelS = SearchModel.Text;
             BindDevices(searchTypeS, searchModelS);
+        }
+
+        private void ListOfDevices_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            SelectedDevice = (Device)ListOfDevices.CurrentRow.DataBoundItem;
+        }
+
+        private void SelectButton_Click(object sender, EventArgs e)
+        {
+            if (SelectedDevice != default)
+            {
+                this.DialogResult = DialogResult.OK;
+            }
+            else
+            {
+                MessageBox.Show("First choose a devie!");
+            }
         }
     }
 }

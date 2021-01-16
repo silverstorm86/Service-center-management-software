@@ -59,8 +59,10 @@
             this.ListOfDevices.Name = "ListOfDevices";
             this.ListOfDevices.ReadOnly = true;
             this.ListOfDevices.RowHeadersWidth = 51;
+            this.ListOfDevices.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.ListOfDevices.Size = new System.Drawing.Size(368, 449);
             this.ListOfDevices.TabIndex = 0;
+            this.ListOfDevices.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ListOfDevices_CellClick);
             this.ListOfDevices.VisibleChanged += new System.EventHandler(this.ListOfDevices_VisibleChanged);
             // 
             // Add
@@ -137,6 +139,7 @@
             // 
             // SelectButton
             // 
+            this.SelectButton.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.SelectButton.Location = new System.Drawing.Point(79, 15);
             this.SelectButton.Margin = new System.Windows.Forms.Padding(4);
             this.SelectButton.Name = "SelectButton";
@@ -144,6 +147,7 @@
             this.SelectButton.TabIndex = 5;
             this.SelectButton.Text = "Select";
             this.SelectButton.UseVisualStyleBackColor = true;
+            this.SelectButton.Click += new System.EventHandler(this.SelectButton_Click);
             // 
             // Search
             // 
