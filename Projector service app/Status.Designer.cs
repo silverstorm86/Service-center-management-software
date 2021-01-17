@@ -148,6 +148,8 @@
             this.ListOfMaintenance.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.ListOfMaintenance.Size = new System.Drawing.Size(1329, 604);
             this.ListOfMaintenance.TabIndex = 1;
+            this.ListOfMaintenance.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ListOfMaintenance_CellClick);
+            this.ListOfMaintenance.VisibleChanged += new System.EventHandler(this.ListOfMaintenance_VisibleChanged);
             // 
             // NewRecordButton
             // 
@@ -189,6 +191,7 @@
             this.InspectionButton.TabIndex = 5;
             this.InspectionButton.Text = "Inspection";
             this.InspectionButton.UseVisualStyleBackColor = true;
+            this.InspectionButton.Click += new System.EventHandler(this.InspectionButton_Click);
             // 
             // PricingButton
             // 

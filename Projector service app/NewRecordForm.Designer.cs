@@ -1,6 +1,6 @@
 ﻿namespace Projector_service_app
 {
-    partial class NewReordForm
+    partial class NewRecordForm
     {
         /// <summary>
         /// Required designer variable.

@@ -78,7 +78,7 @@ namespace Projector_service_app
             PhoneText.Text = string.Empty;
 
         }
-
+        //Method for adding new customer
         private void AddCustomer_Click(object sender, EventArgs e)
         {
             customers.Add(new Customer {
@@ -102,7 +102,7 @@ namespace Projector_service_app
             ClearTextboxes();
         }
                
-
+        //Method enables just pressing numbers
         private void PostalCodeText_KeyPress(object sender, KeyPressEventArgs e)
         {
             if(!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
@@ -110,7 +110,7 @@ namespace Projector_service_app
                 e.Handled = true;
             }
         }
-
+        //Method enables just pressing numbers
         private void VATText_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
@@ -118,7 +118,7 @@ namespace Projector_service_app
                 e.Handled = true;
             }
         }
-
+        //Validating email address
         private void EmailText_Validating(object sender, CancelEventArgs e)
         {
             try
@@ -137,7 +137,7 @@ namespace Projector_service_app
                 EmailText.Focus();
             }
         }
-
+        //Validating Phone number with regex
         private void PhoneText_Validating(object sender, CancelEventArgs e)
         {
              if (!Regex.Match(PhoneText.Text, "^[0-9-()/]*$").Success) 

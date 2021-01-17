@@ -81,17 +81,11 @@
     <Compile Include="ModifyRecordForm.Designer.cs">
       <DependentUpon>ModifyRecordForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="NewReordForm.cs">
+    <Compile Include="NewRecordForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NewReordForm.Designer.cs">
-      <DependentUpon>NewReordForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PriceAcceptanceForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PriceAcceptanceForm.Designer.cs">
-      <DependentUpon>PriceAcceptanceForm.cs</DependentUpon>
+    <Compile Include="NewRecordForm.Designer.cs">
+      <DependentUpon>NewRecordForm.cs</DependentUpon>
     </Compile>
     <Compile Include="PricingForm.cs">
       <SubType>Form</SubType>
@@ -113,11 +107,14 @@
     <EmbeddedResource Include="DeviceForm.resx">
       <DependentUpon>DeviceForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="InspectionForm.resx">
+      <DependentUpon>InspectionForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NewReordForm.resx">
-      <DependentUpon>NewReordForm.cs</DependentUpon>
+    <EmbeddedResource Include="NewRecordForm.resx">
+      <DependentUpon>NewRecordForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

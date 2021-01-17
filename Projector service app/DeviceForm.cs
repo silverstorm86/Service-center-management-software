@@ -12,20 +12,28 @@ namespace Projector_service_app
 {
     public partial class DeviceForm : Form
     {
+        //Variables for the main operation retriveing data from file and the list where it will be used
         private List<Device> devices = new List<Device>();
         private readonly DataSerializer serializer = new DataSerializer();
+
+        // Creating two variables for search engine
         private string searchTypeS = "";
         private string searchModelS = "";
+        //Variable for selected device in internal becouse i want too see it from other form
         internal Device SelectedDevice { get; set; }
         public DeviceForm(int select)
         {
             InitializeComponent();
+            
             BindDevices(searchTypeS, searchModelS);
+
+            //Logic for the activate or not the select button
             if (select < 1)
             {
                 SelectVisibleOrNot.Visible = false;
             }
         }
+        //Geting data from file, putting in the List, searching in a list by the two search variables and showing the results in datagridview
         private void BindDevices(string searchTypeS, string searchModelS) 
         {
             try
@@ -75,6 +83,7 @@ namespace Projector_service_app
             ListOfDevices_VisibleChanged(this, new EventArgs());
         }
 
+        //Method for adding new device too the list and also too the file
         private void AddDevice_Click(object sender, EventArgs e)
         {
             var findTheSame = from s in devices
@@ -102,7 +111,7 @@ namespace Projector_service_app
             else
                 MessageBox.Show("Some forms are not filled out!");
         }
-
+        //Adding the color to the datagridview if something changes in it
         private void ListOfDevices_VisibleChanged(object sender, EventArgs e)
         {
             for (int i = 0; i < ListOfDevices.Rows.Count; i++)
@@ -113,7 +122,7 @@ namespace Projector_service_app
                 }
             }
         }
-
+        //Putting search data in the search variables
         private void SearchType_TextChanged(object sender, EventArgs e)
         {
             searchTypeS = SearchType.Text;
@@ -121,6 +130,7 @@ namespace Projector_service_app
             BindDevices(searchTypeS, searchModelS);
         }
 
+        //Putting search data in the search variables
         private void SearchModel_TextChanged(object sender, EventArgs e)
         {
             searchTypeS = SearchType.Text;
@@ -128,11 +138,12 @@ namespace Projector_service_app
             BindDevices(searchTypeS, searchModelS);
         }
 
+        //If the cell is clicked getting data in a Device variable
         private void ListOfDevices_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             SelectedDevice = (Device)ListOfDevices.CurrentRow.DataBoundItem;
         }
-
+        //Select button clicked, adding the 
         private void SelectButton_Click(object sender, EventArgs e)
         {
             if (SelectedDevice != default)

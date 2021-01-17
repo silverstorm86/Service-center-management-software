@@ -10,12 +10,12 @@ using System.Windows.Forms;
 
 namespace Projector_service_app
 {
-    public partial class NewReordForm : Form
+    public partial class NewRecordForm : Form
     {
         private CustomerForm cf;
         private DeviceForm df;
         internal Maintenance mt;
-        public NewReordForm(int number)
+        public NewRecordForm(int number)
         {
             InitializeComponent();
             MaintaneID(number);
@@ -72,7 +72,8 @@ namespace Projector_service_app
                     DeviceType = DeviceType.Text,
                     DeviceModel = DeviceModel.Text,
                     SerialNumber = SerialText.Text,
-                    ErrorDescription = ErrorText.Text
+                    ErrorDescription = ErrorText.Text,
+                    InDate = DateTime.Now.Date
                 };
 
 

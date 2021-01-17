@@ -11,4 +11,5 @@ C:\Users\silverstorm\source\repos\Service center management software\Service-cen
 C:\Users\silverstorm\source\repos\Service center management software\Service-center-management-software\Projector service app\obj\Debug\Projector_service_app.DeviceForm.resources
 C:\Users\silverstorm\source\repos\Service center management software\Service-center-management-software\Projector service app\obj\Debug\Projector_service_app.CustomerForm.resources
 C:\Users\silverstorm\source\repos\Service center management software\Service-center-management-software\Projector service app\obj\Debug\Projector_service_app.Status.resources
-C:\Users\silverstorm\source\repos\Service center management software\Service-center-management-software\Projector service app\obj\Debug\Projector_service_app.NewReordForm.resources
+C:\Users\silverstorm\source\repos\Service center management software\Service-center-management-software\Projector service app\obj\Debug\Projector_service_app.NewRecordForm.resources
+C:\Users\silverstorm\source\repos\Service center management software\Service-center-management-software\Projector service app\obj\Debug\Projector_service_app.InspectionForm.resources
