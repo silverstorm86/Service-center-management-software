@@ -16,6 +16,8 @@ namespace Projector_service_app
         private readonly DataSerializer serializer = new DataSerializer();
         private NewRecordForm nrf;
         private InspectionForm ifr;
+        private PricingForm pf;
+        private int selectedRow;
         //Variable for selecting a row that will be modified
         private string SelectedMaintenanceNum;
         public Status()
@@ -101,8 +103,8 @@ namespace Projector_service_app
         //Getting the id from the selected row
         private void ListOfMaintenance_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-
-            SelectedMaintenanceNum = ListOfMaintenance.Rows[e.RowIndex].Cells[0].Value.ToString();
+            selectedRow = e.RowIndex;
+            SelectedMaintenanceNum = ListOfMaintenance.Rows[selectedRow].Cells[0].Value.ToString();
         }
         //Adding the color to the datagridview if something changes in it
 
@@ -135,6 +137,42 @@ namespace Projector_service_app
                     ListOfMaintenance.Rows[i].DefaultCellStyle.BackColor = Color.Blue;
                 }
             }
+        }
+
+        private void PricingButton_Click(object sender, EventArgs e)
+        {
+            if (Convert.ToInt32(ListOfMaintenance.Rows[selectedRow].Cells[9].Value) > 0)
+            {
+
+                if (SelectedMaintenanceNum != default)
+                {
+                    pf = new PricingForm()
+                    {
+                        StartPosition = FormStartPosition.CenterScreen
+                    };
+                    pf.ShowDialog();
+
+                    if (pf.DialogResult == DialogResult.OK)
+                    {
+                        foreach (var num in maintenances)
+                        {
+                            if (num.Id.Equals(SelectedMaintenanceNum))
+                            {
+                                num.Offer = pf.Offer;
+                                num.OfferDate = DateTime.Now.Date;
+                            }
+                        }
+
+                        serializer.SerializeMaintenance(maintenances);
+                        maintenances = null;
+
+                        BindMaintenance();
+                    }
+                }
+            }
+            else
+                MessageBox.Show("You must select inspected device!");
+
         }
     }
     

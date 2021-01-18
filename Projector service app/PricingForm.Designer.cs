@@ -28,12 +28,61 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.OfferLabel = new System.Windows.Forms.Label();
+            this.OfferPrice = new System.Windows.Forms.TextBox();
+            this.OfferAdd = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+            // 
+            // OfferLabel
+            // 
+            this.OfferLabel.AutoSize = true;
+            this.OfferLabel.Location = new System.Drawing.Point(13, 13);
+            this.OfferLabel.Name = "OfferLabel";
+            this.OfferLabel.Size = new System.Drawing.Size(76, 13);
+            this.OfferLabel.TabIndex = 0;
+            this.OfferLabel.Text = "Make the offer";
+            // 
+            // OfferPrice
+            // 
+            this.OfferPrice.Location = new System.Drawing.Point(52, 46);
+            this.OfferPrice.Name = "OfferPrice";
+            this.OfferPrice.Size = new System.Drawing.Size(116, 20);
+            this.OfferPrice.TabIndex = 1;
+            this.OfferPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.OfferPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OfferPrice_KeyPress);
+            // 
+            // OfferAdd
+            // 
+            this.OfferAdd.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.OfferAdd.Location = new System.Drawing.Point(66, 80);
+            this.OfferAdd.Name = "OfferAdd";
+            this.OfferAdd.Size = new System.Drawing.Size(91, 30);
+            this.OfferAdd.TabIndex = 2;
+            this.OfferAdd.Text = "Add";
+            this.OfferAdd.UseVisualStyleBackColor = true;
+            this.OfferAdd.Click += new System.EventHandler(this.OfferAdd_Click);
+            // 
+            // PricingForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(213, 128);
+            this.Controls.Add(this.OfferAdd);
+            this.Controls.Add(this.OfferPrice);
+            this.Controls.Add(this.OfferLabel);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "PricingForm";
             this.Text = "PricingForm";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Label OfferLabel;
+        private System.Windows.Forms.TextBox OfferPrice;
+        private System.Windows.Forms.Button OfferAdd;
     }
 }
