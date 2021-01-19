@@ -18,6 +18,7 @@ namespace Projector_service_app
         private InspectionForm ifr;
         private PricingForm pf;
         private int selectedRow;
+        private PriceAcceptance pa;
         //Variable for selecting a row that will be modified
         private string SelectedMaintenanceNum;
         public Status()
@@ -134,14 +135,14 @@ namespace Projector_service_app
                 }
                 if (Convert.ToDateTime(ListOfMaintenance.Rows[i].Cells[15].Value) != default)
                 {
-                    ListOfMaintenance.Rows[i].DefaultCellStyle.BackColor = Color.Blue;
+                    ListOfMaintenance.Rows[i].DefaultCellStyle.BackColor = Color.SkyBlue;
                 }
             }
         }
-
+        //Adding the prices to the list
         private void PricingButton_Click(object sender, EventArgs e)
         {
-            if (Convert.ToInt32(ListOfMaintenance.Rows[selectedRow].Cells[9].Value) > 0)
+            if (Convert.ToInt32(ListOfMaintenance.Rows[selectedRow].Cells[9].Value) > 0 && Convert.ToDateTime(ListOfMaintenance.Rows[selectedRow].Cells[10].Value) == default)
             {
 
                 if (SelectedMaintenanceNum != default)
@@ -173,6 +174,115 @@ namespace Projector_service_app
             else
                 MessageBox.Show("You must select inspected device!");
 
+        }
+        //Accept or not the repair cost by he customer
+        private void PriceAcceptanceButton_Click(object sender, EventArgs e)
+        {
+            if (Convert.ToInt32(ListOfMaintenance.Rows[selectedRow].Cells[9].Value) > 0 && Convert.ToDateTime(ListOfMaintenance.Rows[selectedRow].Cells[10].Value) != default &&
+                Convert.ToDateTime(ListOfMaintenance.Rows[selectedRow].Cells[13].Value) == default)
+            {
+                if (SelectedMaintenanceNum != default)
+                {
+                    pa = new PriceAcceptance()
+                    {
+                        StartPosition = FormStartPosition.CenterScreen
+                    };
+                    pa.ShowDialog();
+
+                    if (pa.DialogResult == DialogResult.Yes)
+                    {
+                        foreach (var num in maintenances)
+                        {
+                            if (num.Id.Equals(SelectedMaintenanceNum))
+                            {
+                                num.FixOrNot = true;
+                                num.RepairStartDate = DateTime.Now.Date;
+                            }
+                        }
+                        serializer.SerializeMaintenance(maintenances);
+                        maintenances = null;
+
+                        BindMaintenance();
+                    }
+                    else if (pa.DialogResult == DialogResult.No)
+                    {
+                        foreach (var num in maintenances)
+                        {
+                            if (num.Id.Equals(SelectedMaintenanceNum))
+                            {
+                                num.FixOrNot = false;
+                                num.RepairStartDate = DateTime.Now.Date;
+                                num.RepairFinishDate = DateTime.Now.Date;
+                            }
+                        }
+                        serializer.SerializeMaintenance(maintenances);
+                        maintenances = null;
+
+                        BindMaintenance();
+                    }
+                }
+                else
+                    MessageBox.Show("You must select inspected device!");
+            }
+            else
+                MessageBox.Show("Some requirment are not met!");
+        }
+
+        //Repair finished
+        private void RepairCompleteButton_Click(object sender, EventArgs e)
+        {
+
+            if (Convert.ToInt32(ListOfMaintenance.Rows[selectedRow].Cells[9].Value) > 0 && Convert.ToDateTime(ListOfMaintenance.Rows[selectedRow].Cells[10].Value) != default
+                && Convert.ToDateTime(ListOfMaintenance.Rows[selectedRow].Cells[13].Value) != default && Convert.ToDateTime(ListOfMaintenance.Rows[selectedRow].Cells[14].Value) == default)
+            {
+                if (SelectedMaintenanceNum != default)
+                {
+                    foreach (var num in maintenances)
+                    {
+                        if (num.Id.Equals(SelectedMaintenanceNum))
+                        {
+                            num.RepairFinishDate = DateTime.Now.Date;
+                        }
+                    }
+
+                    serializer.SerializeMaintenance(maintenances);
+                    maintenances = null;
+
+                    BindMaintenance();
+                }
+                else
+                    MessageBox.Show("You must select inspected device!");
+            }
+            else
+                MessageBox.Show("Some requirment are not met!");
+        }
+        //Customer gone with the device
+        private void TakeoverButton_Click(object sender, EventArgs e)
+        {
+            if (Convert.ToInt32(ListOfMaintenance.Rows[selectedRow].Cells[9].Value) > 0 && Convert.ToDateTime(ListOfMaintenance.Rows[selectedRow].Cells[10].Value) != default
+               && Convert.ToDateTime(ListOfMaintenance.Rows[selectedRow].Cells[13].Value) != default && Convert.ToDateTime(ListOfMaintenance.Rows[selectedRow].Cells[14].Value) != default &&
+               Convert.ToDateTime(ListOfMaintenance.Rows[selectedRow].Cells[15].Value) == default)
+            {
+                if (SelectedMaintenanceNum != default)
+                {
+                    foreach (var num in maintenances)
+                    {
+                        if (num.Id.Equals(SelectedMaintenanceNum))
+                        {
+                            num.OutDate = DateTime.Now.Date;
+                        }
+                    }
+
+                    serializer.SerializeMaintenance(maintenances);
+                    maintenances = null;
+
+                    BindMaintenance();
+                }
+                else
+                    MessageBox.Show("You must select inspected device!");
+            }
+            else
+                MessageBox.Show("Some requirment are not met!");
         }
     }
     

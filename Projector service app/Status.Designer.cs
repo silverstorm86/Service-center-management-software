@@ -59,9 +59,9 @@
             this.Search.Controls.Add(this.IDText);
             this.Search.Controls.Add(this.IDLabel);
             this.Search.Location = new System.Drawing.Point(10, 11);
-            this.Search.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Search.Margin = new System.Windows.Forms.Padding(2);
             this.Search.Name = "Search";
-            this.Search.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Search.Padding = new System.Windows.Forms.Padding(2);
             this.Search.Size = new System.Drawing.Size(997, 58);
             this.Search.TabIndex = 0;
             this.Search.TabStop = false;
@@ -71,7 +71,7 @@
             // 
             this.Repaired.AutoSize = true;
             this.Repaired.Location = new System.Drawing.Point(792, 24);
-            this.Repaired.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Repaired.Margin = new System.Windows.Forms.Padding(2);
             this.Repaired.Name = "Repaired";
             this.Repaired.Size = new System.Drawing.Size(69, 17);
             this.Repaired.TabIndex = 6;
@@ -82,7 +82,7 @@
             // 
             this.OutService.AutoSize = true;
             this.OutService.Location = new System.Drawing.Point(878, 24);
-            this.OutService.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.OutService.Margin = new System.Windows.Forms.Padding(2);
             this.OutService.Name = "OutService";
             this.OutService.Size = new System.Drawing.Size(103, 17);
             this.OutService.TabIndex = 5;
@@ -93,7 +93,7 @@
             // 
             this.InService.AutoSize = true;
             this.InService.Location = new System.Drawing.Point(684, 24);
-            this.InService.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.InService.Margin = new System.Windows.Forms.Padding(2);
             this.InService.Name = "InService";
             this.InService.Size = new System.Drawing.Size(90, 17);
             this.InService.TabIndex = 4;
@@ -103,7 +103,7 @@
             // CompanyText
             // 
             this.CompanyText.Location = new System.Drawing.Point(274, 24);
-            this.CompanyText.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.CompanyText.Margin = new System.Windows.Forms.Padding(2);
             this.CompanyText.Name = "CompanyText";
             this.CompanyText.Size = new System.Drawing.Size(166, 20);
             this.CompanyText.TabIndex = 3;
@@ -121,7 +121,7 @@
             // IDText
             // 
             this.IDText.Location = new System.Drawing.Point(81, 24);
-            this.IDText.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.IDText.Margin = new System.Windows.Forms.Padding(2);
             this.IDText.Name = "IDText";
             this.IDText.Size = new System.Drawing.Size(76, 20);
             this.IDText.TabIndex = 1;
@@ -142,7 +142,7 @@
             this.ListOfMaintenance.AllowUserToDeleteRows = false;
             this.ListOfMaintenance.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ListOfMaintenance.Location = new System.Drawing.Point(10, 75);
-            this.ListOfMaintenance.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ListOfMaintenance.Margin = new System.Windows.Forms.Padding(2);
             this.ListOfMaintenance.Name = "ListOfMaintenance";
             this.ListOfMaintenance.ReadOnly = true;
             this.ListOfMaintenance.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
@@ -156,7 +156,7 @@
             // NewRecordButton
             // 
             this.NewRecordButton.Location = new System.Drawing.Point(11, 591);
-            this.NewRecordButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.NewRecordButton.Margin = new System.Windows.Forms.Padding(2);
             this.NewRecordButton.Name = "NewRecordButton";
             this.NewRecordButton.Size = new System.Drawing.Size(107, 46);
             this.NewRecordButton.TabIndex = 2;
@@ -167,7 +167,7 @@
             // MoreInfo
             // 
             this.MoreInfo.Location = new System.Drawing.Point(900, 591);
-            this.MoreInfo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MoreInfo.Margin = new System.Windows.Forms.Padding(2);
             this.MoreInfo.Name = "MoreInfo";
             this.MoreInfo.Size = new System.Drawing.Size(107, 46);
             this.MoreInfo.TabIndex = 3;
@@ -177,7 +177,7 @@
             // Modify
             // 
             this.Modify.Location = new System.Drawing.Point(773, 591);
-            this.Modify.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Modify.Margin = new System.Windows.Forms.Padding(2);
             this.Modify.Name = "Modify";
             this.Modify.Size = new System.Drawing.Size(107, 46);
             this.Modify.TabIndex = 4;
@@ -187,7 +187,7 @@
             // InspectionButton
             // 
             this.InspectionButton.Location = new System.Drawing.Point(138, 591);
-            this.InspectionButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.InspectionButton.Margin = new System.Windows.Forms.Padding(2);
             this.InspectionButton.Name = "InspectionButton";
             this.InspectionButton.Size = new System.Drawing.Size(107, 46);
             this.InspectionButton.TabIndex = 5;
@@ -198,7 +198,7 @@
             // PricingButton
             // 
             this.PricingButton.Location = new System.Drawing.Point(265, 591);
-            this.PricingButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.PricingButton.Margin = new System.Windows.Forms.Padding(2);
             this.PricingButton.Name = "PricingButton";
             this.PricingButton.Size = new System.Drawing.Size(107, 46);
             this.PricingButton.TabIndex = 6;
@@ -209,32 +209,35 @@
             // PriceAcceptanceButton
             // 
             this.PriceAcceptanceButton.Location = new System.Drawing.Point(392, 591);
-            this.PriceAcceptanceButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.PriceAcceptanceButton.Margin = new System.Windows.Forms.Padding(2);
             this.PriceAcceptanceButton.Name = "PriceAcceptanceButton";
             this.PriceAcceptanceButton.Size = new System.Drawing.Size(107, 46);
             this.PriceAcceptanceButton.TabIndex = 7;
             this.PriceAcceptanceButton.Text = "Price acceptance";
             this.PriceAcceptanceButton.UseVisualStyleBackColor = true;
+            this.PriceAcceptanceButton.Click += new System.EventHandler(this.PriceAcceptanceButton_Click);
             // 
             // RepairCompleteButton
             // 
             this.RepairCompleteButton.Location = new System.Drawing.Point(519, 591);
-            this.RepairCompleteButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.RepairCompleteButton.Margin = new System.Windows.Forms.Padding(2);
             this.RepairCompleteButton.Name = "RepairCompleteButton";
             this.RepairCompleteButton.Size = new System.Drawing.Size(107, 46);
             this.RepairCompleteButton.TabIndex = 8;
             this.RepairCompleteButton.Text = "Repair complete";
             this.RepairCompleteButton.UseVisualStyleBackColor = true;
+            this.RepairCompleteButton.Click += new System.EventHandler(this.RepairCompleteButton_Click);
             // 
             // TakeoverButton
             // 
             this.TakeoverButton.Location = new System.Drawing.Point(646, 591);
-            this.TakeoverButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TakeoverButton.Margin = new System.Windows.Forms.Padding(2);
             this.TakeoverButton.Name = "TakeoverButton";
             this.TakeoverButton.Size = new System.Drawing.Size(107, 46);
             this.TakeoverButton.TabIndex = 9;
             this.TakeoverButton.Text = "Device takeover";
             this.TakeoverButton.UseVisualStyleBackColor = true;
+            this.TakeoverButton.Click += new System.EventHandler(this.TakeoverButton_Click);
             // 
             // Status
             // 
@@ -251,7 +254,7 @@
             this.Controls.Add(this.NewRecordButton);
             this.Controls.Add(this.ListOfMaintenance);
             this.Controls.Add(this.Search);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Status";
