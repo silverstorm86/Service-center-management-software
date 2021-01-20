@@ -12,7 +12,9 @@ namespace Projector_service_app
 {
     public partial class ModifyRecordForm : Form
     {
-        public ModifyRecordForm()
+        
+        internal Maintenance Mainnew { get; set; }
+        internal ModifyRecordForm(Maintenance mainold)
         {
             InitializeComponent();
         }

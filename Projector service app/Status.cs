@@ -19,6 +19,7 @@ namespace Projector_service_app
         private PricingForm pf;
         private int selectedRow;
         private PriceAcceptance pa;
+        private ModifyRecordForm mrf;
         //Variable for selecting a row that will be modified
         private string SelectedMaintenanceNum;
         public Status()
@@ -283,6 +284,47 @@ namespace Projector_service_app
             }
             else
                 MessageBox.Show("Some requirment are not met!");
+        }
+        //Activazing modify button
+        private void Modify_Click(object sender, EventArgs e)
+        {
+            if (Convert.ToDateTime(ListOfMaintenance.Rows[selectedRow].Cells[15].Value) == default)
+            {
+                if (SelectedMaintenanceNum != default)
+                {
+                    foreach (var num in maintenances)
+                    {
+                        if (num.Id.Equals(SelectedMaintenanceNum))
+                        {
+                            mrf = new ModifyRecordForm(num)
+                            {
+                                StartPosition = FormStartPosition.CenterScreen
+                            };
+                        }
+                    }
+                    
+                    mrf.ShowDialog();
+                    if (mrf.DialogResult == DialogResult.OK)
+                    {
+                        foreach (var num in maintenances)
+                        {
+                            if (num.Id.Equals(SelectedMaintenanceNum))
+                            {
+                                num.CustomerCompName = mrf.Mainnew.CustomerCompName;
+                            }
+                        }
+                    }
+
+                    serializer.SerializeMaintenance(maintenances);
+                    maintenances = null;
+
+                    BindMaintenance();
+                }
+                else
+                    MessageBox.Show("You must select inspected device!");
+            }
+            else
+                MessageBox.Show("You can't modify finished device!");
         }
     }
     

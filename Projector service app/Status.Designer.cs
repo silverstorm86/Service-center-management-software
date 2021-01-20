@@ -183,6 +183,7 @@
             this.Modify.TabIndex = 4;
             this.Modify.Text = "Modify record";
             this.Modify.UseVisualStyleBackColor = true;
+            this.Modify.Click += new System.EventHandler(this.Modify_Click);
             // 
             // InspectionButton
             // 
