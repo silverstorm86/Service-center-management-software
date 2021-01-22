@@ -119,6 +119,9 @@
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ModifyRecordForm.resx">
+      <DependentUpon>ModifyRecordForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NewRecordForm.resx">
       <DependentUpon>NewRecordForm.cs</DependentUpon>
     </EmbeddedResource>

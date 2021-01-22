@@ -310,7 +310,15 @@ namespace Projector_service_app
                         {
                             if (num.Id.Equals(SelectedMaintenanceNum))
                             {
+                                num.CustomerId = mrf.Mainnew.CustomerId;
                                 num.CustomerCompName = mrf.Mainnew.CustomerCompName;
+                                num.DeviceType = mrf.Mainnew.DeviceType;
+                                num.DeviceModel = mrf.Mainnew.DeviceModel;
+                                num.SerialNumber = mrf.Mainnew.SerialNumber;
+                                num.ErrorDescription = mrf.Mainnew.ErrorDescription;
+                                num.RepairDescription = mrf.Mainnew.RepairDescription;
+                                num.MaterialCost = mrf.Mainnew.MaterialCost;
+                                num.Offer = mrf.Mainnew.Offer;
                             }
                         }
                     }
