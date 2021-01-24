@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Status));
             this.Search = new System.Windows.Forms.GroupBox();
             this.Repaired = new System.Windows.Forms.CheckBox();
             this.OutService = new System.Windows.Forms.CheckBox();
@@ -45,6 +46,8 @@
             this.PriceAcceptanceButton = new System.Windows.Forms.Button();
             this.RepairCompleteButton = new System.Windows.Forms.Button();
             this.TakeoverButton = new System.Windows.Forms.Button();
+            this.PrintDocumentMI = new System.Drawing.Printing.PrintDocument();
+            this.PrintPreviewDialogMoreInfo = new System.Windows.Forms.PrintPreviewDialog();
             this.Search.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ListOfMaintenance)).BeginInit();
             this.SuspendLayout();
@@ -58,11 +61,11 @@
             this.Search.Controls.Add(this.CompanyLabel);
             this.Search.Controls.Add(this.IDText);
             this.Search.Controls.Add(this.IDLabel);
-            this.Search.Location = new System.Drawing.Point(10, 11);
-            this.Search.Margin = new System.Windows.Forms.Padding(2);
+            this.Search.Location = new System.Drawing.Point(13, 14);
+            this.Search.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Search.Name = "Search";
-            this.Search.Padding = new System.Windows.Forms.Padding(2);
-            this.Search.Size = new System.Drawing.Size(997, 58);
+            this.Search.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Search.Size = new System.Drawing.Size(1329, 71);
             this.Search.TabIndex = 0;
             this.Search.TabStop = false;
             this.Search.Text = "Search";
@@ -70,10 +73,10 @@
             // Repaired
             // 
             this.Repaired.AutoSize = true;
-            this.Repaired.Location = new System.Drawing.Point(792, 24);
-            this.Repaired.Margin = new System.Windows.Forms.Padding(2);
+            this.Repaired.Location = new System.Drawing.Point(1056, 30);
+            this.Repaired.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Repaired.Name = "Repaired";
-            this.Repaired.Size = new System.Drawing.Size(69, 17);
+            this.Repaired.Size = new System.Drawing.Size(88, 21);
             this.Repaired.TabIndex = 6;
             this.Repaired.Text = "Repaired";
             this.Repaired.UseVisualStyleBackColor = true;
@@ -81,10 +84,10 @@
             // OutService
             // 
             this.OutService.AutoSize = true;
-            this.OutService.Location = new System.Drawing.Point(878, 24);
-            this.OutService.Margin = new System.Windows.Forms.Padding(2);
+            this.OutService.Location = new System.Drawing.Point(1171, 30);
+            this.OutService.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.OutService.Name = "OutService";
-            this.OutService.Size = new System.Drawing.Size(103, 17);
+            this.OutService.Size = new System.Drawing.Size(134, 21);
             this.OutService.TabIndex = 5;
             this.OutService.Text = "Out from service";
             this.OutService.UseVisualStyleBackColor = true;
@@ -92,47 +95,45 @@
             // InService
             // 
             this.InService.AutoSize = true;
-            this.InService.Location = new System.Drawing.Point(684, 24);
-            this.InService.Margin = new System.Windows.Forms.Padding(2);
+            this.InService.Location = new System.Drawing.Point(912, 30);
+            this.InService.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.InService.Name = "InService";
-            this.InService.Size = new System.Drawing.Size(90, 17);
+            this.InService.Size = new System.Drawing.Size(114, 21);
             this.InService.TabIndex = 4;
             this.InService.Text = "In the service";
             this.InService.UseVisualStyleBackColor = true;
             // 
             // CompanyText
             // 
-            this.CompanyText.Location = new System.Drawing.Point(274, 24);
-            this.CompanyText.Margin = new System.Windows.Forms.Padding(2);
+            this.CompanyText.Location = new System.Drawing.Point(365, 30);
+            this.CompanyText.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CompanyText.Name = "CompanyText";
-            this.CompanyText.Size = new System.Drawing.Size(166, 20);
+            this.CompanyText.Size = new System.Drawing.Size(220, 22);
             this.CompanyText.TabIndex = 3;
             // 
             // CompanyLabel
             // 
             this.CompanyLabel.AutoSize = true;
-            this.CompanyLabel.Location = new System.Drawing.Point(189, 26);
-            this.CompanyLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.CompanyLabel.Location = new System.Drawing.Point(252, 32);
             this.CompanyLabel.Name = "CompanyLabel";
-            this.CompanyLabel.Size = new System.Drawing.Size(80, 13);
+            this.CompanyLabel.Size = new System.Drawing.Size(106, 17);
             this.CompanyLabel.TabIndex = 2;
             this.CompanyLabel.Text = "Company name";
             // 
             // IDText
             // 
-            this.IDText.Location = new System.Drawing.Point(81, 24);
-            this.IDText.Margin = new System.Windows.Forms.Padding(2);
+            this.IDText.Location = new System.Drawing.Point(108, 30);
+            this.IDText.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.IDText.Name = "IDText";
-            this.IDText.Size = new System.Drawing.Size(76, 20);
+            this.IDText.Size = new System.Drawing.Size(100, 22);
             this.IDText.TabIndex = 1;
             // 
             // IDLabel
             // 
             this.IDLabel.AutoSize = true;
-            this.IDLabel.Location = new System.Drawing.Point(26, 26);
-            this.IDLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.IDLabel.Location = new System.Drawing.Point(35, 32);
             this.IDLabel.Name = "IDLabel";
-            this.IDLabel.Size = new System.Drawing.Size(52, 13);
+            this.IDLabel.Size = new System.Drawing.Size(67, 17);
             this.IDLabel.TabIndex = 0;
             this.IDLabel.Text = "Repair ID";
             // 
@@ -141,24 +142,24 @@
             this.ListOfMaintenance.AllowUserToAddRows = false;
             this.ListOfMaintenance.AllowUserToDeleteRows = false;
             this.ListOfMaintenance.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ListOfMaintenance.Location = new System.Drawing.Point(10, 75);
-            this.ListOfMaintenance.Margin = new System.Windows.Forms.Padding(2);
+            this.ListOfMaintenance.Location = new System.Drawing.Point(13, 92);
+            this.ListOfMaintenance.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ListOfMaintenance.Name = "ListOfMaintenance";
             this.ListOfMaintenance.ReadOnly = true;
             this.ListOfMaintenance.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
             this.ListOfMaintenance.RowTemplate.Height = 24;
             this.ListOfMaintenance.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.ListOfMaintenance.Size = new System.Drawing.Size(997, 491);
+            this.ListOfMaintenance.Size = new System.Drawing.Size(1329, 604);
             this.ListOfMaintenance.TabIndex = 1;
             this.ListOfMaintenance.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ListOfMaintenance_CellClick);
             this.ListOfMaintenance.VisibleChanged += new System.EventHandler(this.ListOfMaintenance_VisibleChanged);
             // 
             // NewRecordButton
             // 
-            this.NewRecordButton.Location = new System.Drawing.Point(11, 591);
-            this.NewRecordButton.Margin = new System.Windows.Forms.Padding(2);
+            this.NewRecordButton.Location = new System.Drawing.Point(15, 727);
+            this.NewRecordButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.NewRecordButton.Name = "NewRecordButton";
-            this.NewRecordButton.Size = new System.Drawing.Size(107, 46);
+            this.NewRecordButton.Size = new System.Drawing.Size(143, 57);
             this.NewRecordButton.TabIndex = 2;
             this.NewRecordButton.Text = "Add new record";
             this.NewRecordButton.UseVisualStyleBackColor = true;
@@ -166,20 +167,21 @@
             // 
             // MoreInfo
             // 
-            this.MoreInfo.Location = new System.Drawing.Point(900, 591);
-            this.MoreInfo.Margin = new System.Windows.Forms.Padding(2);
+            this.MoreInfo.Location = new System.Drawing.Point(1200, 727);
+            this.MoreInfo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MoreInfo.Name = "MoreInfo";
-            this.MoreInfo.Size = new System.Drawing.Size(107, 46);
+            this.MoreInfo.Size = new System.Drawing.Size(143, 57);
             this.MoreInfo.TabIndex = 3;
             this.MoreInfo.Text = "More information";
             this.MoreInfo.UseVisualStyleBackColor = true;
+            this.MoreInfo.Click += new System.EventHandler(this.MoreInfo_Click);
             // 
             // Modify
             // 
-            this.Modify.Location = new System.Drawing.Point(773, 591);
-            this.Modify.Margin = new System.Windows.Forms.Padding(2);
+            this.Modify.Location = new System.Drawing.Point(1031, 727);
+            this.Modify.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Modify.Name = "Modify";
-            this.Modify.Size = new System.Drawing.Size(107, 46);
+            this.Modify.Size = new System.Drawing.Size(143, 57);
             this.Modify.TabIndex = 4;
             this.Modify.Text = "Modify record";
             this.Modify.UseVisualStyleBackColor = true;
@@ -187,10 +189,10 @@
             // 
             // InspectionButton
             // 
-            this.InspectionButton.Location = new System.Drawing.Point(138, 591);
-            this.InspectionButton.Margin = new System.Windows.Forms.Padding(2);
+            this.InspectionButton.Location = new System.Drawing.Point(184, 727);
+            this.InspectionButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.InspectionButton.Name = "InspectionButton";
-            this.InspectionButton.Size = new System.Drawing.Size(107, 46);
+            this.InspectionButton.Size = new System.Drawing.Size(143, 57);
             this.InspectionButton.TabIndex = 5;
             this.InspectionButton.Text = "Inspection";
             this.InspectionButton.UseVisualStyleBackColor = true;
@@ -198,10 +200,10 @@
             // 
             // PricingButton
             // 
-            this.PricingButton.Location = new System.Drawing.Point(265, 591);
-            this.PricingButton.Margin = new System.Windows.Forms.Padding(2);
+            this.PricingButton.Location = new System.Drawing.Point(353, 727);
+            this.PricingButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PricingButton.Name = "PricingButton";
-            this.PricingButton.Size = new System.Drawing.Size(107, 46);
+            this.PricingButton.Size = new System.Drawing.Size(143, 57);
             this.PricingButton.TabIndex = 6;
             this.PricingButton.Text = "Pricing";
             this.PricingButton.UseVisualStyleBackColor = true;
@@ -209,10 +211,10 @@
             // 
             // PriceAcceptanceButton
             // 
-            this.PriceAcceptanceButton.Location = new System.Drawing.Point(392, 591);
-            this.PriceAcceptanceButton.Margin = new System.Windows.Forms.Padding(2);
+            this.PriceAcceptanceButton.Location = new System.Drawing.Point(523, 727);
+            this.PriceAcceptanceButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PriceAcceptanceButton.Name = "PriceAcceptanceButton";
-            this.PriceAcceptanceButton.Size = new System.Drawing.Size(107, 46);
+            this.PriceAcceptanceButton.Size = new System.Drawing.Size(143, 57);
             this.PriceAcceptanceButton.TabIndex = 7;
             this.PriceAcceptanceButton.Text = "Price acceptance";
             this.PriceAcceptanceButton.UseVisualStyleBackColor = true;
@@ -220,10 +222,10 @@
             // 
             // RepairCompleteButton
             // 
-            this.RepairCompleteButton.Location = new System.Drawing.Point(519, 591);
-            this.RepairCompleteButton.Margin = new System.Windows.Forms.Padding(2);
+            this.RepairCompleteButton.Location = new System.Drawing.Point(692, 727);
+            this.RepairCompleteButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.RepairCompleteButton.Name = "RepairCompleteButton";
-            this.RepairCompleteButton.Size = new System.Drawing.Size(107, 46);
+            this.RepairCompleteButton.Size = new System.Drawing.Size(143, 57);
             this.RepairCompleteButton.TabIndex = 8;
             this.RepairCompleteButton.Text = "Repair complete";
             this.RepairCompleteButton.UseVisualStyleBackColor = true;
@@ -231,20 +233,37 @@
             // 
             // TakeoverButton
             // 
-            this.TakeoverButton.Location = new System.Drawing.Point(646, 591);
-            this.TakeoverButton.Margin = new System.Windows.Forms.Padding(2);
+            this.TakeoverButton.Location = new System.Drawing.Point(861, 727);
+            this.TakeoverButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TakeoverButton.Name = "TakeoverButton";
-            this.TakeoverButton.Size = new System.Drawing.Size(107, 46);
+            this.TakeoverButton.Size = new System.Drawing.Size(143, 57);
             this.TakeoverButton.TabIndex = 9;
             this.TakeoverButton.Text = "Device takeover";
             this.TakeoverButton.UseVisualStyleBackColor = true;
             this.TakeoverButton.Click += new System.EventHandler(this.TakeoverButton_Click);
             // 
+            // PrintDocumentMI
+            // 
+            this.PrintDocumentMI.DocumentName = "More Information";
+            this.PrintDocumentMI.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.PrintDocumentMI_PrintPage);
+            // 
+            // PrintPreviewDialogMoreInfo
+            // 
+            this.PrintPreviewDialogMoreInfo.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.PrintPreviewDialogMoreInfo.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.PrintPreviewDialogMoreInfo.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.PrintPreviewDialogMoreInfo.ClientSize = new System.Drawing.Size(400, 300);
+            this.PrintPreviewDialogMoreInfo.Document = this.PrintDocumentMI;
+            this.PrintPreviewDialogMoreInfo.Enabled = true;
+            this.PrintPreviewDialogMoreInfo.Icon = ((System.Drawing.Icon)(resources.GetObject("PrintPreviewDialogMoreInfo.Icon")));
+            this.PrintPreviewDialogMoreInfo.Name = "PrintPreviewDialogMoreInfo";
+            this.PrintPreviewDialogMoreInfo.Visible = false;
+            // 
             // Status
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1020, 648);
+            this.ClientSize = new System.Drawing.Size(1360, 798);
             this.Controls.Add(this.TakeoverButton);
             this.Controls.Add(this.RepairCompleteButton);
             this.Controls.Add(this.PriceAcceptanceButton);
@@ -255,7 +274,7 @@
             this.Controls.Add(this.NewRecordButton);
             this.Controls.Add(this.ListOfMaintenance);
             this.Controls.Add(this.Search);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Status";
@@ -286,5 +305,7 @@
         private System.Windows.Forms.Button PriceAcceptanceButton;
         private System.Windows.Forms.Button RepairCompleteButton;
         private System.Windows.Forms.Button TakeoverButton;
+        private System.Drawing.Printing.PrintDocument PrintDocumentMI;
+        private System.Windows.Forms.PrintPreviewDialog PrintPreviewDialogMoreInfo;
     }
 }

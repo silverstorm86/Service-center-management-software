@@ -81,6 +81,12 @@
     <Compile Include="ModifyRecordForm.Designer.cs">
       <DependentUpon>ModifyRecordForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="MoreInformation.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MoreInformation.Designer.cs">
+      <DependentUpon>MoreInformation.cs</DependentUpon>
+    </Compile>
     <Compile Include="NewRecordForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,6 +127,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ModifyRecordForm.resx">
       <DependentUpon>ModifyRecordForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MoreInformation.resx">
+      <DependentUpon>MoreInformation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NewRecordForm.resx">
       <DependentUpon>NewRecordForm.cs</DependentUpon>

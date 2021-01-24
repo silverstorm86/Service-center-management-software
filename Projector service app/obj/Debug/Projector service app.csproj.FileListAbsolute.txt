@@ -16,3 +16,4 @@ C:\Users\silverstorm\source\repos\Service center management software\Service-cen
 C:\Users\silverstorm\source\repos\Service center management software\Service-center-management-software\Projector service app\obj\Debug\Projector_service_app.PricingForm.resources
 C:\Users\silverstorm\source\repos\Service center management software\Service-center-management-software\Projector service app\obj\Debug\Projector_service_app.PriceAcceptance.resources
 C:\Users\silverstorm\source\repos\Service center management software\Service-center-management-software\Projector service app\obj\Debug\Projector_service_app.ModifyRecordForm.resources
+C:\Users\silverstorm\source\repos\Service center management software\Service-center-management-software\Projector service app\obj\Debug\Projector_service_app.MoreInformation.resources

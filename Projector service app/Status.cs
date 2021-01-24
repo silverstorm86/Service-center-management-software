@@ -22,6 +22,9 @@ namespace Projector_service_app
         private ModifyRecordForm mrf;
         //Variable for selecting a row that will be modified
         private string SelectedMaintenanceNum;
+        //For printing
+        private Bitmap PrintPicture;
+        private MoreInformation mi;
         public Status()
         {
             InitializeComponent();
@@ -333,6 +336,30 @@ namespace Projector_service_app
             }
             else
                 MessageBox.Show("You can't modify finished device!");
+        }
+        //Methods for printing doument
+        private void PrintDocumentMI_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            e.Graphics.DrawImage(PrintPicture, e.PageBounds);
+        }
+
+        private void MoreInfo_Click(object sender, EventArgs e)
+        {
+
+            if (SelectedMaintenanceNum != default)
+            {
+                mi = new MoreInformation(SelectedMaintenanceNum);
+                PrintPicture = new Bitmap(mi.Width, mi.Height);
+                PrintPicture.SetResolution(150, 150);
+                mi.DrawToBitmap(PrintPicture, new Rectangle(0, 0, PrintPicture.Width, PrintPicture.Height));
+                PrintPreviewDialogMoreInfo.Document = PrintDocumentMI;
+                PrintPreviewDialogMoreInfo.StartPosition = FormStartPosition.CenterScreen;
+
+                PrintPreviewDialogMoreInfo.ClientSize = new System.Drawing.Size(PrintPicture.Width, PrintPicture.Height);
+                PrintPreviewDialogMoreInfo.ShowDialog();
+            }
+            else
+                MessageBox.Show("You must select inspected device!");
         }
     }
     
