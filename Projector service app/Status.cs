@@ -25,6 +25,13 @@ namespace Projector_service_app
         //For printing
         private Bitmap PrintPicture;
         private MoreInformation mi;
+        //Search parameters
+        private string repairID = "";
+        private string companyName = "";
+        private bool inTheService = false;
+        private bool repaired = false;
+        private bool outService = false;
+
         public Status()
         {
             InitializeComponent();
@@ -42,8 +49,71 @@ namespace Projector_service_app
                 MessageBox.Show("No writen data!");
             }
 
+            if (repairID != "")
+            {
+                List<Maintenance> result = new List<Maintenance>();
+                for (int i = 0; i < maintenances.Count(); i++)
+                {
+                    if (maintenances[i].Id.ToUpper().Contains(repairID.ToUpper()))
+                    {
+                        result.Add(maintenances[i]);
+                    }
 
-            
+                }
+                maintenances = result;
+            }
+            if (companyName != "")
+            {
+                List<Maintenance> result = new List<Maintenance>();
+                for (int i = 0; i < maintenances.Count(); i++)
+                {
+                    if (maintenances[i].CustomerCompName.ToUpper().Contains(companyName.ToUpper()))
+                    {
+                        result.Add(maintenances[i]);
+                    }
+
+                }
+                maintenances = result;
+            }
+            if (inTheService != false)
+            {
+                List<Maintenance> result = new List<Maintenance>();
+                for (int i = 0; i < maintenances.Count(); i++)
+                {
+                    if (maintenances[i].InDate != default && maintenances[i].OutDate == default)
+                    {
+                        result.Add(maintenances[i]);
+                    }
+
+                }
+                maintenances = result;
+            }
+            if (repaired != false)
+            {
+                List<Maintenance> result = new List<Maintenance>();
+                for (int i = 0; i < maintenances.Count(); i++)
+                {
+                    if (maintenances[i].RepairFinishDate != default && maintenances[i].OutDate == default)
+                    {
+                        result.Add(maintenances[i]);
+                    }
+
+                }
+                maintenances = result;
+            }
+            if (outService != false)
+            {
+                List<Maintenance> result = new List<Maintenance>();
+                for (int i = 0; i < maintenances.Count(); i++)
+                {
+                    if (maintenances[i].OutDate != default)
+                    {
+                        result.Add(maintenances[i]);
+                    }
+
+                }
+                maintenances = result;
+            }
 
             BindingList<Maintenance> bindingList = new BindingList<Maintenance>(maintenances);
             BindingSource source = new BindingSource(bindingList, null);
@@ -288,7 +358,7 @@ namespace Projector_service_app
             else
                 MessageBox.Show("Some requirment are not met!");
         }
-        //Activazing modify button
+        //Activating modify button
         private void Modify_Click(object sender, EventArgs e)
         {
             if (Convert.ToDateTime(ListOfMaintenance.Rows[selectedRow].Cells[15].Value) == default)
@@ -360,6 +430,60 @@ namespace Projector_service_app
             }
             else
                 MessageBox.Show("You must select inspected device!");
+        }
+
+        private void IDText_TextChanged(object sender, EventArgs e)
+        {
+            repairID = IDText.Text;
+            BindMaintenance();
+        }
+
+        private void CompanyText_TextChanged(object sender, EventArgs e)
+        {
+            companyName = CompanyText.Text;
+            BindMaintenance();
+        }
+
+        private void InService_Click(object sender, EventArgs e)
+        {
+            if (InService.Checked)
+            {
+                inTheService = true;
+                BindMaintenance();
+            }
+            else
+            {
+                inTheService = false;
+                BindMaintenance();
+            }
+        }
+
+        private void Repaired_Click(object sender, EventArgs e)
+        {
+            if (Repaired.Checked)
+            {
+                repaired = true;
+                BindMaintenance();
+            }
+            else
+            {
+                repaired = false;
+                BindMaintenance();
+            }
+        }
+
+        private void OutService_Click(object sender, EventArgs e)
+        {
+            if (OutService.Checked)
+            {
+                outService = true;
+                BindMaintenance();
+            }
+            else
+            {
+                outService = false;
+                BindMaintenance();
+            }
         }
     }
     
