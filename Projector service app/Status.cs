@@ -410,7 +410,15 @@ namespace Projector_service_app
         //Methods for printing doument
         private void PrintDocumentMI_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
-            e.Graphics.DrawImage(PrintPicture, e.PageBounds);
+            
+            var wScale = e.MarginBounds.Width / (float)PrintPicture.Width;
+            var hScale = e.MarginBounds.Height / (float)PrintPicture.Height;
+
+            var scale = wScale < hScale ? wScale : hScale;
+
+            e.Graphics.ScaleTransform(scale, scale);
+
+            e.Graphics.DrawImage(PrintPicture, 0, 0);
         }
 
         private void MoreInfo_Click(object sender, EventArgs e)
@@ -420,7 +428,6 @@ namespace Projector_service_app
             {
                 mi = new MoreInformation(SelectedMaintenanceNum);
                 PrintPicture = new Bitmap(mi.Width, mi.Height);
-                PrintPicture.SetResolution(150, 150);
                 mi.DrawToBitmap(PrintPicture, new Rectangle(0, 0, PrintPicture.Width, PrintPicture.Height));
                 PrintPreviewDialogMoreInfo.Document = PrintDocumentMI;
                 PrintPreviewDialogMoreInfo.StartPosition = FormStartPosition.CenterScreen;

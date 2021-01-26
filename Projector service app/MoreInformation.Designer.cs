@@ -28,73 +28,138 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.CompName = new System.Windows.Forms.Label();
+            this.PostalCode = new System.Windows.Forms.Label();
+            this.Town = new System.Windows.Forms.Label();
+            this.Address = new System.Windows.Forms.Label();
+            this.VatNum = new System.Windows.Forms.Label();
+            this.ContactName = new System.Windows.Forms.Label();
+            this.Email = new System.Windows.Forms.Label();
+            this.PhoneNum = new System.Windows.Forms.Label();
+            this.Customer = new System.Windows.Forms.GroupBox();
+            this.Customer.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label1
+            // CompName
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(5, 5);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(46, 17);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "label1";
+            this.CompName.AutoSize = true;
+            this.CompName.Location = new System.Drawing.Point(18, 35);
+            this.CompName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.CompName.Name = "CompName";
+            this.CompName.Size = new System.Drawing.Size(53, 14);
+            this.CompName.TabIndex = 1;
+            this.CompName.Text = "CompName";
             // 
-            // label2
+            // PostalCode
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(4, 1652);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(46, 17);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "label2";
+            this.PostalCode.AutoSize = true;
+            this.PostalCode.Location = new System.Drawing.Point(18, 63);
+            this.PostalCode.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.PostalCode.Name = "PostalCode";
+            this.PostalCode.Size = new System.Drawing.Size(53, 14);
+            this.PostalCode.TabIndex = 2;
+            this.PostalCode.Text = "PostalCode";
             // 
-            // label3
+            // Town
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(1190, 5);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(46, 17);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "label3";
+            this.Town.AutoSize = true;
+            this.Town.Location = new System.Drawing.Point(85, 63);
+            this.Town.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Town.Name = "Town";
+            this.Town.Size = new System.Drawing.Size(28, 14);
+            this.Town.TabIndex = 3;
+            this.Town.Text = "Town";
             // 
-            // label4
+            // Address
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(1190, 1652);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(46, 17);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "label4";
+            this.Address.AutoSize = true;
+            this.Address.Location = new System.Drawing.Point(18, 91);
+            this.Address.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Address.Name = "Address";
+            this.Address.Size = new System.Drawing.Size(42, 14);
+            this.Address.TabIndex = 4;
+            this.Address.Text = "Address";
+            // 
+            // VatNum
+            // 
+            this.VatNum.AutoSize = true;
+            this.VatNum.Location = new System.Drawing.Point(18, 124);
+            this.VatNum.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.VatNum.Name = "VatNum";
+            this.VatNum.Size = new System.Drawing.Size(38, 14);
+            this.VatNum.TabIndex = 5;
+            this.VatNum.Text = "VatNum";
+            // 
+            // ContactName
+            // 
+            this.ContactName.AutoSize = true;
+            this.ContactName.Location = new System.Drawing.Point(18, 158);
+            this.ContactName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.ContactName.Name = "ContactName";
+            this.ContactName.Size = new System.Drawing.Size(62, 14);
+            this.ContactName.TabIndex = 6;
+            this.ContactName.Text = "ContactName";
+            // 
+            // Email
+            // 
+            this.Email.AutoSize = true;
+            this.Email.Location = new System.Drawing.Point(18, 194);
+            this.Email.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Email.Name = "Email";
+            this.Email.Size = new System.Drawing.Size(28, 14);
+            this.Email.TabIndex = 7;
+            this.Email.Text = "Email";
+            // 
+            // PhoneNum
+            // 
+            this.PhoneNum.AutoSize = true;
+            this.PhoneNum.Location = new System.Drawing.Point(18, 234);
+            this.PhoneNum.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.PhoneNum.Name = "PhoneNum";
+            this.PhoneNum.Size = new System.Drawing.Size(50, 14);
+            this.PhoneNum.TabIndex = 8;
+            this.PhoneNum.Text = "PhoneNum";
+            // 
+            // Customer
+            // 
+            this.Customer.Controls.Add(this.ContactName);
+            this.Customer.Controls.Add(this.PhoneNum);
+            this.Customer.Controls.Add(this.CompName);
+            this.Customer.Controls.Add(this.Email);
+            this.Customer.Controls.Add(this.PostalCode);
+            this.Customer.Controls.Add(this.Town);
+            this.Customer.Controls.Add(this.VatNum);
+            this.Customer.Controls.Add(this.Address);
+            this.Customer.Location = new System.Drawing.Point(3, 3);
+            this.Customer.Name = "Customer";
+            this.Customer.Size = new System.Drawing.Size(274, 275);
+            this.Customer.TabIndex = 9;
+            this.Customer.TabStop = false;
+            this.Customer.Text = "Customer details";
             // 
             // MoreInformation
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.AutoSize = true;
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Controls.Add(this.Customer);
+            this.Font = new System.Drawing.Font("Arial Narrow", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "MoreInformation";
-            this.Size = new System.Drawing.Size(1754, 3000);
+            this.Size = new System.Drawing.Size(595, 842);
+            this.Customer.ResumeLayout(false);
+            this.Customer.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label CompName;
+        private System.Windows.Forms.Label PostalCode;
+        private System.Windows.Forms.Label Town;
+        private System.Windows.Forms.Label Address;
+        private System.Windows.Forms.Label VatNum;
+        private System.Windows.Forms.Label ContactName;
+        private System.Windows.Forms.Label Email;
+        private System.Windows.Forms.Label PhoneNum;
+        private System.Windows.Forms.GroupBox Customer;
     }
 }
