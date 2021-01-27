@@ -19,12 +19,20 @@ namespace Projector_service_app
         Customer resultC = new Customer();
 
 
+
         public MoreInformation(string SelectedNum)
         {
             InitializeComponent();
             BindAll();
             GetSelection(SelectedNum);
             WriteCustomerData(resultC);
+            DeviceData(resultM);
+            ErrorData(resultM);
+            RepairData(resultM);
+            Offer(resultM);
+            FixNot(resultM);
+            RepairProcess(resultM);
+            TakeOver(resultM);
         }
         private void BindAll()
         {
@@ -75,6 +83,75 @@ namespace Projector_service_app
             PhoneNum.Text = resultC.PhoneNum;
             Email.Text = resultC.Email;
 
+        }
+        private void DeviceData(Maintenance resultM)
+        {
+            MaintNumber.Text = resultM.Id;
+            DeviceType.Text = resultM.DeviceType;
+            DeviceModel.Text = resultM.DeviceModel;
+            DeviceSerial.Text = resultM.SerialNumber;
+        }
+
+        private void ErrorData(Maintenance resultM)
+        {
+            InDate.Text = resultM.InDate.ToString("yyyy-MM-dd");
+            ErrorDesc.Text = resultM.ErrorDescription;
+        }
+        private void RepairData(Maintenance resultM)
+        {
+            if (resultM.RepairDescription != default)
+            {
+                RepairDescText.Text = resultM.RepairDescription;
+                CostMat.Text = resultM.MaterialCost.ToString();
+            }
+            else
+                Diagnosis.Visible = false;
+        }
+        private void Offer(Maintenance resultM)
+        {
+            if (resultM.Offer > 0)
+            {
+                OfferDate.Text = resultM.OfferDate.ToString("yyyy-MM-dd");
+                OfferCost.Text = resultM.Offer.ToString();
+            }
+            else
+                OfferGroup.Visible = false;
+        }
+        private void FixNot(Maintenance resultM)
+        {
+            if (resultM.FixOrNot != default)
+            {
+                if (resultM.FixOrNot != true)
+                {
+                    FixOrNot.Text = "Not for fixing!";
+                }
+                else
+                    FixOrNot.Text = "Fix!";
+            }
+            else
+                FixOrNot.Visible = false;
+        }
+        private void RepairProcess(Maintenance resultM)
+        {
+            if (resultM.RepairStartDate != default)
+            {
+                RepStart.Text = resultM.RepairStartDate.ToString("yyyy-MM-dd");
+                RepFinish.Text = resultM.RepairFinishDate.ToString("yyyy-MM-dd");
+            }
+            else
+            {
+                RepairPro.Visible = false;
+            }
+        }
+
+        private void TakeOver(Maintenance resultM)
+        {
+            if (resultM.OutDate != default)
+            {
+                TakeOverDate.Text = resultM.OutDate.ToString("yyyy-MM-dd");
+            }
+            else
+                TakeOverGroup.Visible = false;
         }
     }
 }
